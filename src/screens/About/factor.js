@@ -1,11 +1,11 @@
 import React from 'react'
 
-const About = () => {
+const factor = () => {
   return (
     <div>
-      <h1>About</h1>
+      
     </div>
   )
 }
 
-export default About
+export default factor
