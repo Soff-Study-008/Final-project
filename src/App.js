@@ -4,6 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <h1>Здраствуйте ака</h1>
       <h1>Sunnat aka qoshgan tag</h1>
       <button>mustafo qoshdi</button>
       <p>dfghjdfghjk </p>
