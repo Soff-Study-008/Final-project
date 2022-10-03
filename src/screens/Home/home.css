@@ -1,20 +1,24 @@
-.soz_for{
+.soz_for {
     background-image: url("https://www.soyuz.ru/public/uploads/files/2/7440962/202006151614072127241941.jpg");
     background-size: cover;
     width: 100%;
-    height: 550px;
+    padding: 20px;
+    height: 1000px;
+    position: relative;
 }
-.fon_home{
+
+.fon_home {
     background-color: black;
 }
-.music_avtor{
+
+.music_avtor {
     color: white;
     font-size: 17px;
     font-weight: bold;
     margin-top: 20px;
 }
 
-.bt_watch{
+.bt_watch {
     padding: 0px 20px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -28,7 +32,7 @@
     text-align: center;
 }
 
-.bt_img{
+.bt_img {
     margin-top: 6.5px;
     margin-left: 10px;
     width: 15px;
@@ -36,7 +40,7 @@
 }
 
 
-.bt_mylist{
+.bt_mylist {
     text-align: center;
     padding: 0px 20px;
     padding-top: 5px;
@@ -50,17 +54,71 @@
     margin-right: 20px;
 }
 
-.text_red{
+.text_red {
     color: orangered;
     font-size: 17px;
     font-weight: bold;
 }
 
-.text_wight{
+.text_wight {
     color: white;
     font-size: 19px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
     margin-bottom: 30px;
     margin-top: -10px;
+}
+
+
+.razn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.razn p {
+    color: white;
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.abs {
+    position: absolute;
+    width: 79%;
+    height: 450px;
+    top: 70%;
+    left: 11%;
+    background-color: rgba(0, 0, 0, 0.436);
+    padding: 20px 50px;
+}
+
+.map_card {
+    background-color: none;
+}
+
+.img_map {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.p_map {
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 19px;
+}
+
+.play_map {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 0px;
+    color: white;
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: rgb(89, 11, 190);
+    background: linear-gradient(90deg, rgba(89, 11, 190, 1) 0%, rgba(153, 19, 157, 1) 35%, rgba(18, 187, 222, 1) 100%);
+
 }
