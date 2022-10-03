@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className='footer'>
       <div className="container">
-      <div className='row'>   
+        <div className='row'>
           <div className="col-2 offsett-1">
             <Dropdown className='dr-footer'>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -32,6 +32,14 @@ const Footer = () => {
             <p className="footer-text">About Us</p>
             <p className="footer-text">Help Centre </p>
           </div>
+          <div className="col-2">   <h2 className="footer-title">LEGAL</h2>
+            <p className="footer-text">Home</p>
+            <p className="footer-text">FAQ</p>
+            <p className="footer-text">Investor Relations</p>
+            <p className="footer-text">Jobs</p>
+            <p className="footer-text">About Us</p>
+            <p className="footer-text">Help Centre </p>
+          </div>
           <div className="col-2">   <h2 className="footer-title">Navigation</h2>
             <p className="footer-text">Home</p>
             <p className="footer-text">FAQ</p>
@@ -46,14 +54,7 @@ const Footer = () => {
             <p className="footer-text">Jobs</p>
             <p className="footer-text">About Us</p>
             <p className="footer-text">Help Centre </p></div>
-          <div className="col-2">   <h2 className="footer-title">Navigation</h2>
-            <p className="footer-text">Home</p>
-            <p className="footer-text">FAQ</p>
-            <p className="footer-text">Investor Relations</p>
-            <p className="footer-text">Jobs</p>
-            <p className="footer-text">About Us</p>
-            <p className="footer-text">Help Centre </p></div>
-      </div>
+        </div>
       </div>
     </footer>
   )
