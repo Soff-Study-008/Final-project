@@ -1,7 +1,7 @@
 import React from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { BsGlobe2, BsFacebook, BsTelegram} from 'react-icons/bs';
-import { AiFillLinkedin} from 'react-icons/ai';
+import { BsGlobe2, BsFacebook, BsTelegram } from 'react-icons/bs';
+import { AiFillLinkedin } from 'react-icons/ai';
 
 
 const Footer = () => {
@@ -58,9 +58,9 @@ const Footer = () => {
           <div className="col-2">
             <h2 className="footer-title">Follow us</h2>
             <div className="footer-info2">
-              <p className="footer-text2"><BsFacebook/></p>
-              <p className="footer-text2"><AiFillLinkedin/></p>
-              <p className="footer-text2"><BsTelegram/></p>
+              <p className="footer-text2"><BsFacebook /></p>
+              <p className="footer-text2"><AiFillLinkedin /></p>
+              <p className="footer-text2"><BsTelegram /></p>
             </div>
           </div>
         </div>
