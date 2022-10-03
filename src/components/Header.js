@@ -14,7 +14,7 @@ const Header = () => {
         <img src="DRAMATIC.png" alt="" className="navbar_logo" />
         <ul className="nav_item">
           <li className="nav_list">
-            <a href="#!" className="nav_link">HOME</a>wdwda
+            <a href="#!" className="nav_link">HOME</a>
           </li>
           <li className="nav_list">
             <a href="#!" className="nav_link">TV SHOW</a>
