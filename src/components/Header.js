@@ -7,13 +7,14 @@ import { FiBell, FiGift } from 'react-icons/fi';
 
 
 const Header = () => {
+
   return (
     <div className="navbar_header">
       <div className="navbar_left">
         <img src="DRAMATIC.png" alt="" className="navbar_logo" />
         <ul className="nav_item">
           <li className="nav_list">
-            <a href="#!" className="nav_link">HOME</a>
+            <a href="#!" className="nav_link">HOME</a>wdwda
           </li>
           <li className="nav_list">
             <a href="#!" className="nav_link">TV SHOW</a>
