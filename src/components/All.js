@@ -3,7 +3,7 @@ import Footer from './Footer';
 import Header from './Header';
 import "./All.css"
 
-const All = () => {
+const All = ({children}) => {
   return (
     <div>
         <Header/>
