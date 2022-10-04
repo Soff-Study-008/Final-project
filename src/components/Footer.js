@@ -1,13 +1,14 @@
 import React from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { BsGlobe2 } from 'react-icons/bs';
+import { BsGlobe2, BsFacebook, BsTelegram } from 'react-icons/bs';
+import { AiFillLinkedin } from 'react-icons/ai';
 
 
 const Footer = () => {
   return (
     <footer className='footer'>
       <div className="container">
-      <div className='row'>   
+        <div className='row'>
           <div className="col-2 offsett-1">
             <Dropdown className='dr-footer'>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -25,38 +26,51 @@ const Footer = () => {
           </div>
           <div className="col-2">
             <h2 className="footer-title">Navigation</h2>
-            <p className="footer-text">Home</p>
-            <p className="footer-text">FAQ</p>
-            <p className="footer-text">Investor Relations</p>
-            <p className="footer-text">Jobs</p>
-            <p className="footer-text">About Us</p>
-            <p className="footer-text">Help Centre </p>
+            <div className="footer-info">
+              <p className="footer-text">Home</p>
+              <p className="footer-text">FAQ</p>
+              <p className="footer-text">Investor Relations</p>
+              <p className="footer-text">Jobs</p>
+              <p className="footer-text">About Us</p>
+              <p className="footer-text">Help Centre </p>
+            </div>
           </div>
-          <div className="col-2">   <h2 className="footer-title">Navigation</h2>
-            <p className="footer-text">Home</p>
-            <p className="footer-text">FAQ</p>
-            <p className="footer-text">Investor Relations</p>
-            <p className="footer-text">Jobs</p>
-            <p className="footer-text">About Us</p>
-            <p className="footer-text">Help Centre </p></div>
-          <div className="col-2">   <h2 className="footer-title">Navigation</h2>
-            <p className="footer-text">Home</p>
-            <p className="footer-text">FAQ</p>
-            <p className="footer-text">Investor Relations</p>
-            <p className="footer-text">Jobs</p>
-            <p className="footer-text">About Us</p>
-            <p className="footer-text">Help Centre </p></div>
-          <div className="col-2">   <h2 className="footer-title">Navigation</h2>
-            <p className="footer-text">Home</p>
-            <p className="footer-text">FAQ</p>
-            <p className="footer-text">Investor Relations</p>
-            <p className="footer-text">Jobs</p>
-            <p className="footer-text">About Us</p>
-            <p className="footer-text">Help Centre </p></div>
-      </div>
+          <div className="col-2">
+            <h2 className="footer-title">LEGAL</h2>
+            <div className="footer-info">
+              <p className="footer-text">Privacy Policy</p>
+              <p className="footer-text">Terms of Service</p>
+              <p className="footer-text">Cookie Preferences</p>
+              <p className="footer-text">Corporate Information</p>
+            </div>
+          </div>
+          <div className="col-2">
+            <h2 className="footer-title">TALK TO US</h2>
+            <div className="footer-info">
+              <p className="footer-text">seniorsunnat@gmail.com</p>
+              <p className="footer-text">mustafapolatov18@gmail.com</p>
+              <p className="footer-text">bekmahnudov@gmail.com</p>
+              <p className="footer-text">+990809165556</p>
+              <p className="footer-text">+998909200203</p>
+              <p className="footer-text">+998943662002</p>
+            </div>
+          </div>
+          <div className="col-2">
+            <h2 className="footer-title">Follow us</h2>
+            <div className="footer-info2">
+              <p className="footer-text2"><BsFacebook /></p>
+              <p className="footer-text2"><AiFillLinkedin /></p>
+              <p className="footer-text2"><BsTelegram /></p>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   )
 }
 
 export default Footer
+
+
+
+
