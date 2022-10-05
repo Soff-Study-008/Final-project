@@ -1,0 +1,66 @@
+.soz_for{
+    background-image: url("https://www.soyuz.ru/public/uploads/files/2/7440962/202006151614072127241941.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 550px;
+}
+.fon_home{
+    background-color: black;
+}
+.music_avtor{
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.bt_watch{
+    padding: 0px 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 20px;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: blueviolet;
+    border: none;
+    border-radius: 12px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.bt_img{
+    margin-top: 6.5px;
+    margin-left: 10px;
+    width: 15px;
+
+}
+
+
+.bt_mylist{
+    text-align: center;
+    padding: 0px 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 20px;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(103, 103, 103);
+    border: none;
+    border-radius: 12px;
+    margin-right: 20px;
+}
+
+.text_red{
+    color: orangered;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.text_wight{
+    color: white;
+    font-size: 19px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: -10px;
+}
