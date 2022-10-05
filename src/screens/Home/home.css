@@ -165,9 +165,7 @@
     justify-content: center;
     align-items: center;
 
-
 }
-
 
 .rasm_1 {
     width: 100%;
@@ -178,3 +176,9 @@
     font-size: 120px;
     color: white;
 }
+
+.player{
+    position: relative;
+}
+
+
