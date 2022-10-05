@@ -7,6 +7,7 @@ import { FiBell, FiGift } from 'react-icons/fi';
 
 
 const Header = () => {
+
   return (
     <div className="navbar_header">
       <div className="navbar_left">

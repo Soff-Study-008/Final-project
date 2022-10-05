@@ -1,20 +1,24 @@
-.soz_for{
+.soz_for {
     background-image: url("https://www.soyuz.ru/public/uploads/files/2/7440962/202006151614072127241941.jpg");
     background-size: cover;
     width: 100%;
-    height: 550px;
+    padding: 20px;
+    height: 1000px;
+    position: relative;
 }
-.fon_home{
+
+.fon_home {
     background-color: black;
 }
-.music_avtor{
+
+.music_avtor {
     color: white;
     font-size: 17px;
     font-weight: bold;
     margin-top: 20px;
 }
 
-.bt_watch{
+.bt_watch {
     padding: 0px 20px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -28,7 +32,7 @@
     text-align: center;
 }
 
-.bt_img{
+.bt_img {
     margin-top: 6.5px;
     margin-left: 10px;
     width: 15px;
@@ -36,7 +40,7 @@
 }
 
 
-.bt_mylist{
+.bt_mylist {
     text-align: center;
     padding: 0px 20px;
     padding-top: 5px;
@@ -50,17 +54,194 @@
     margin-right: 20px;
 }
 
-.text_red{
+.text_red {
     color: orangered;
     font-size: 17px;
     font-weight: bold;
 }
 
-.text_wight{
+.text_wight {
     color: white;
     font-size: 19px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
     margin-bottom: 30px;
     margin-top: -10px;
+}
+
+
+.razn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.razn p {
+    color: white;
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.abs {
+    position: absolute;
+    width: 79%;
+    height: 600px;
+    top: 800px;
+    left: 180px;
+    background-color: rgba(0, 0, 0, 0.436);
+    padding: 20px 50px;
+}
+
+.map_card {
+    background-color: none;
+}
+
+.img_map {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.p_map {
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 19px;
+}
+
+.play_map {
+    border: none;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+
+    border-radius: 10px;
+    padding: 10px 0px;
+    color: white;
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: rgb(89, 11, 190);
+    background: linear-gradient(90deg, rgba(89, 11, 190, 1) 0%, rgba(153, 19, 157, 1) 35%, rgba(18, 187, 222, 1) 100%);
+
+}
+
+
+
+.product {
+    width: 300px;
+    height: 466px;
+    background: #ccc;
+}
+
+.product-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+.product-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transform: translateZ(25px);
+
+}
+
+.product-top {
+    height: 50%;
+    width: 100%;
+    background: linear-gradient(#0794a6, #9bae07);
+    color: #fff;
+}
+
+.product-top h1 {
+    font-size: 100px;
+    margin-left: 20px;
+    font-style: italic;
+    opacity: 0.3;
+}
+
+
+.product-bootom {
+    padding: 10px 30px;
+}
+
+.product-bootom p {
+    font-style: 12px;
+}
+
+.product-bootom h2 {
+    margin-bottom: 10px;
+    color: #008394;
+    letter-spacing: 1px;
+}
+
+.product-bootom h1 {
+    font-style: 40px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.product-bootom h1 span {
+    color: #008394
+}
+
+.product-bootom button {
+    padding: 5px 25px;
+    margin-bottom: 10px;
+    background: transparent;
+    color: #008394;
+    border: solid 1px #008394;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+}
+
+
+
+.color-select {
+    display: flex;
+    float: right;
+    margin-top: -10px;
+}
+
+.select-item {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+
+
+.Play {
+    font-size: 60px;
+}
+
+
+.rel {
+    position: relative;
+}
+
+
+.hover_boganda {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(16, 184, 196, 0.532);
+}
+
+.rel:hover .hover_boganda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rasm_1 {
+    width: 100%;
 }
