@@ -21,7 +21,7 @@ const Footer = () => {
               <Dropdown.Menu>
                 <Dropdown.Item href="#/action-1">English</Dropdown.Item>
                 <Dropdown.Item href="#/action-2">Russian</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">UZb</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Uzb</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>

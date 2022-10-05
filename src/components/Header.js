@@ -14,7 +14,7 @@ const Header = () => {
    <div className="navbar_fon">
      <div className="navbar_header">
       <div className="navbar_left">
-        <h2 className="nav_title">MUsic</h2>
+        <h2 className="nav_title pt-1">MUsic</h2>
         <ul className="nav_item">
           <li className="nav_list">
             <a href="#!" className="nav_link">HOME</a>
