@@ -40,7 +40,7 @@ const Header = () => {
         <p className="nav_icons"><AiOutlineMessage /></p>
         <p className="nav_icons"><BsCameraVideo /></p>
         <p className="nav_icons"><FiBell /></p>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPcTAwJbcx3ZFn9tZbJQ6C_w0HN4l3p-tsngefWD9F&s" alt="" className="nav_right" />
+        <img src="https://img.freepik.com/premium-vector/listening-music-e-sport-mascot-logo_10051-752.jpg?w=2000" alt="" className="nav_right" />
       </div>
     </div>
    </div>
