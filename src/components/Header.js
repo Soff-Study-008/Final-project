@@ -11,7 +11,8 @@ import {  AiOutlineMessage } from 'react-icons/ai';
 const Header = () => {
 
   return (
-    <div className="navbar_header">
+   <div className="navbar_fon">
+     <div className="navbar_header">
       <div className="navbar_left">
         <h2 className="nav_title">MUsic</h2>
         <ul className="nav_item">
@@ -30,18 +31,19 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar_right">
-        <div class="search-box">
-          <input type="text" className='input-search' placeholder="Type to Search..."/>
-          <button className="btn-search"><a className="right-icons2"><FaSearch /></a></button>
+        <div class="search_box">
+         <input type="text" placeholder='Serach' className='input-search'  />
+         <button className='bt_seacrh'><FaSearch /></button>
         </div>
       </div>
       <div className="headr-icons">
         <p className="nav_icons"><AiOutlineMessage /></p>
         <p className="nav_icons"><BsCameraVideo /></p>
         <p className="nav_icons"><FiBell /></p>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPcTAwJbcx3ZFn9tZbJQ6C_w0HN4l3p-tsngefWD9F&s" alt="" className="nav_right" />
+        <img src="https://img.freepik.com/premium-vector/listening-music-e-sport-mascot-logo_10051-752.jpg?w=2000" alt="" className="nav_right" />
       </div>
     </div>
+   </div>
   )
 }
 
