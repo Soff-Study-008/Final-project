@@ -1,11 +1,11 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { FaSearch } from 'react-icons/fa';
 import All from '../../components/All'
 import "./home.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
 import { AiFillPlayCircle } from "react-icons/ai";
 import { useNavigate } from 'react-router-dom';
 
@@ -72,10 +72,6 @@ const Home = () => {
                     state: data
                 })
             })
-
-
-
-
     }
 
 
@@ -118,31 +114,6 @@ const Home = () => {
         <All>
             <section className='fon_home'>
                 <div className="container">
-                    <input type="input" placeholder='search' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
-                        if (event.key == "Enter") {
-                            Searching()
-                        }
-                    }} />
-                    <button onClick={Searching}>Search</button>
-                    <div className="row">
-                        {
-                            (data.length > 0) ? (
-                                data.map((v, i) => {
-                                    return <div key={i} className="col-3">
-                                        <div className="card">
-                                            <img src={v.images[0].url} alt="" />
-                                            <h1>{v.name}</h1>
-                                            <button onClick={() => Going(v.id)} className="btn btn-warning">Play</button>
-                                        </div>
-
-                                    </div>
-                                })
-                            ) : (
-                                <h1>error</h1>
-                            )
-                        }
-                    </div>
-
                     <div className="row">
                         <div className="col-12 soz_for">
                             <div className="row">
@@ -166,15 +137,38 @@ const Home = () => {
                         <div className="slider_map">
                             <div>
                                 <div className="razn">
-                                    <p>Music you must sling</p>
+                                    <div className="search_box">
+                                        <input className='input-search' type="input" placeholder='search' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
+                                            if (event.key == "Enter") {
+                                                Searching()
+                                            }
+                                        }} />
+                                        <button className='bt_seacrh' onClick={Searching}><FaSearch /></button>
+                                    </div>
                                     <select name="music" id="music">
                                         <option value="">Filters</option>
                                         <option value=""></option>
                                         <option value=""></option>
                                     </select>
                                 </div>
+                                <div className="row">
+                                    {
+                                        (data.length > 0) ? (
+                                            data.map((v, i) => {
+                                                return <div key={i} className="col-3">
+                                                    <div className="card">
+                                                        <img src={v.images[0].url} alt="" />
+                                                        <h1>{v.name}</h1>
+                                                        <button onClick={() => Going(v.id)} className="btn btn-warning">Play</button>
+                                                    </div>
 
-
+                                                </div>
+                                            })
+                                        ) : (
+                                            <h1>error</h1>
+                                        )
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>
