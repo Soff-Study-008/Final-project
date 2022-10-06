@@ -1,4 +1,5 @@
 import React from 'react';
+import "./All.css";
 import Dropdown from 'react-bootstrap/Dropdown';
 import { BsGlobe2, BsFacebook, BsTelegram } from 'react-icons/bs';
 import { AiFillLinkedin } from 'react-icons/ai';
@@ -9,7 +10,7 @@ const Footer = () => {
     <footer className='footer'>
       <div className="container">
         <div className='row'>
-          <div className="col-2 offsett-1">
+          <div className="col-2 offset-1">
             <Dropdown className='dr-footer'>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
                 <div className="d-inline-block">
@@ -58,9 +59,9 @@ const Footer = () => {
           <div className="col-2">
             <h2 className="footer-title">Follow us</h2>
             <div className="footer-info2">
-              <p className="footer-text2"><BsFacebook /></p>
-              <p className="footer-text2"><AiFillLinkedin /></p>
-              <p className="footer-text2"><BsTelegram /></p>
+              <p className="footer_text2"><BsFacebook /></p>
+              <p className="footer_text2"><AiFillLinkedin /></p>
+              <p className="footer_text2"><BsTelegram /></p>
             </div>
           </div>
         </div>

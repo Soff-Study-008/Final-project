@@ -3,12 +3,12 @@ import Footer from './Footer';
 import Header from './Header';
 import "./All.css"
 
-const All = ({children}) => {
+const All = ({ children }) => {
   return (
     <div>
-        <Header/>
-            {children}
-        <Footer/>
+      <Header />
+      {children}
+      <Footer />
     </div>
   )
 }
