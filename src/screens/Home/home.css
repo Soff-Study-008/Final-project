@@ -1,5 +1,5 @@
 .soz_for {
-   background-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
     width: 100%;
     padding: 20px;
     height: 1000px;
@@ -86,7 +86,7 @@
     position: absolute;
     width: 76%;
     height: 400px;
-    top: 78%;
+    top: 90%;
     left: 11%;
     background-color: rgba(0, 0, 0, 0.436);
     padding: 20px 50px;
@@ -156,7 +156,7 @@
     top: 0;
     left: 0;
     background-color: rgba(29, 57, 79, 0.532);
-    
+
 }
 
 .rel:hover .hover_boganda {
@@ -171,19 +171,72 @@
 }
 
 
-.gl_title{
+.gl_title {
     font-size: 120px;
     color: white;
 }
 
-.player{
+.player {
     position: relative;
 }
 
 
-.gl_title{
+.gl_title {
     font-size: 105px;
+}
+
+/************************************************ Section_About start ************************************/
+
+.card_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(78, 77, 77);
+    margin: 5px;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px;
+    cursor: pointer;
+}
+
+.card_section:hover{
+    transform: translateX(8px);
+}
+
+.section_img {
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    background-position: top;
+    box-shadow: 10px 10px 10px;
+}
+
+.section_title {
+    color: #fff;
 }
 
 
 
+.info_text {
+    color: #fff;
+}
+
+.section_popularty {
+    padding: 10px;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.153);
+    color: #fff;
+}
+
+.section_popularty span {
+    padding: 10px;
+    color: aqua;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.section_play{
+    color: #fff;
+    font-size: 40px;
+}

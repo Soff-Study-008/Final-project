@@ -2,7 +2,8 @@ import React from 'react';
 import "./All.css";
 import Dropdown from 'react-bootstrap/Dropdown';
 import { BsGlobe2, BsFacebook, BsTelegram } from 'react-icons/bs';
-import { AiFillLinkedin } from 'react-icons/ai';
+import { AiFillLinkedin, AiOutlineInstagram } from 'react-icons/ai';
+import { FiTwitter} from 'react-icons/fi';
 
 
 const Footer = () => {
@@ -57,11 +58,16 @@ const Footer = () => {
             </div>
           </div>
           <div className="col-2">
-            <h2 className="footer-title">Follow us</h2>
-            <div className="footer-info2">
-              <p className="footer_text2"><BsFacebook /></p>
-              <p className="footer_text2"><AiFillLinkedin /></p>
-              <p className="footer_text2"><BsTelegram /></p>
+            <div className="col2">
+              <h2 className="footer-title">Follow us</h2>
+              <div className="footer-info2">
+                <div className="footer_text2"><BsFacebook /></div>
+                <div className="footer_text2"><AiFillLinkedin /></div>
+                <div className="footer_text2"><BsTelegram /></div>
+                <div className="footer_text2"><AiOutlineInstagram /></div>
+                <div className="footer_text2"><FiTwitter /></div>
+              </div>
+
             </div>
           </div>
         </div>

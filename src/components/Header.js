@@ -23,7 +23,7 @@ const Header = () => {
             <a href="#!" className="nav_link">TV SHOW</a>
           </li>
           <li className="nav_list">
-            <a href="#!" className="nav_link">MOVIES</a>
+            <a href="#!" className="nav_link">SEARCH</a>
           </li>
           <li className="nav_list">
             <a href="#!" className="nav_link">NEW</a>
