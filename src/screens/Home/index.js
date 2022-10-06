@@ -146,35 +146,34 @@ const Home = () => {
                                         }} />
                                         <button className='bt_seacrh' onClick={Searching}><FaSearch /></button>
                                     </div>
-                                        <select name="music" id="music" className='filtres_map'>
-                                            <option value="">Filters</option>
-                                            <option value=""></option>
-                                            <option value=""></option>
-                                        </select>
+                                    <select name="music" id="music" className='filtres_map'>
+                                        <option value="">Filters</option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>
                                 </div>
-                                
-                                    {
-                                        (data.length > 0) ? (
-                                            data.map((v, i) => {
-                                                return <div key={i} className="about_section">
-                                                    <div className="card_section">
-                                                        <img className='section_img' src={v.images[0].url} alt="" />
-                                                        <h4 className='section_title'>{v.name}</h4>
-                                                        <div className="section_info">
-                                                            <p className="info_text">{v.genres[0]}</p>
-                                                            <p className="section_popularty">popularity : <span> {v.popularity}</span></p>
-                                                        </div>
-                                                        <p className="section_play"><AiFillPlayCircle/></p>
-                                                        <button onClick={() => Going(v.id)} className="btn btn-warning">Play</button>
-                                                    </div>
 
+                                {
+                                    (data.length > 0) ? (
+                                        data.map((v, i) => {
+                                            return <div key={i} className="about_section">
+                                                <div className="card_section">
+                                                    <img className='section_img' src={v.images[0].url} alt="" />
+                                                    <h4 className='section_title'>{v.name}</h4>
+                                                    <div className="section_info">
+                                                        <p className="info_text">{v.genres[0]}</p>
+                                                        <p className="section_popularty">popularity : <span> {v.popularity}</span></p>
+                                                    </div>
+                                                    <p className="section_play"><AiFillPlayCircle /></p>
+                                                    <button onClick={() => Going(v.id)} className="btn btn-warning">Play</button>
                                                 </div>
-                                            })
-                                        ) : (
-                                            <h1>error</h1>
-                                        )
-                                    }
-                                
+
+                                            </div>
+                                        })
+                                    ) : (
+                                        <h1>error</h1>
+                                    )
+                                }
                             </div>
                         </div>
                     </div>
