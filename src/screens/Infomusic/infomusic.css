@@ -1,0 +1,44 @@
+.rasm_100{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.fon{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+.flex_togasi{
+    display: flex;
+    padding: 10px;
+    
+}
+
+.flex_togasi p{
+    color: white;
+    font-size: 25px;
+    margin-top: -1.5px;
+
+}
+
+.absol{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    left: 0;
+}
+
+
+.black_fon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.26);
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
+}
