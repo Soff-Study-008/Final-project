@@ -64,14 +64,13 @@ const Home = () => {
                 "Authorization": "Bearer " + token
             }
         }
-        var albums = await fetch("https://api.spotify.com/v1/artists/" + ID + "/albums" + "?include_groups=album&market=US&limit=50", artistParametres)
+        var aristID = await fetch("https://api.spotify.com/v1/search?q=" + inputWord + "&type=track", artistParametres)
             .then(response => response.json())
-            .then((data) => {
+            .then(data => {
                 console.log(data);
-                navigate("/infomusic", {
-                    state: data
-                })
+               
             })
+
 
 
 
@@ -132,7 +131,7 @@ const Home = () => {
                                         <div className="card">
                                             <img src={v.images[0].url} alt="" />
                                             <h1>{v.name}</h1>
-                                            <button onClick={() => Going(v.id)} className="btn btn-warning">Play</button>
+                                            <button onClick={() => Going(v.name)} className="btn btn-warning">Play</button>
                                         </div>
 
                                     </div>
