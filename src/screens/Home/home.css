@@ -87,7 +87,7 @@
     position: absolute;
     width: 79%;
     height: 400px;
-    top: 76%;
+    top: 78%;
     left: 11%;
     background-color: rgba(0, 0, 0, 0.436);
     padding: 20px 50px;
@@ -115,7 +115,6 @@
     width: 50%;
     height: 50%;
     border-radius: 50%;
-
     border-radius: 10px;
     padding: 10px 0px;
     color: white;
@@ -128,101 +127,25 @@
 
 
 
-.product {
-    width: 300px;
-    height: 466px;
-    background: #ccc;
-}
 
-.product-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-
-}
-
-.product-front {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    transform: translateZ(25px);
-
-}
-
-.product-top {
-    height: 50%;
-    width: 100%;
-    background: linear-gradient(#0794a6, #9bae07);
-    color: #fff;
-}
-
-.product-top h1 {
-    font-size: 100px;
-    margin-left: 20px;
-    font-style: italic;
-    opacity: 0.3;
-}
-
-
-.product-bootom {
-    padding: 10px 30px;
-}
-
-.product-bootom p {
-    font-style: 12px;
-}
-
-.product-bootom h2 {
-    margin-bottom: 10px;
-    color: #008394;
-    letter-spacing: 1px;
-}
-
-.product-bootom h1 {
-    font-style: 40px;
-    font-weight: 400;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.product-bootom h1 span {
-    color: #008394
-}
-
-.product-bootom button {
-    padding: 5px 25px;
-    margin-bottom: 10px;
-    background: transparent;
-    color: #008394;
-    border: solid 1px #008394;
-    border-radius: 30px;
+.filters_map {
+    background-color: gray;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 10px;
     outline: none;
-    cursor: pointer;
+    height: 40px;
 }
 
-
-
-.color-select {
-    display: flex;
-    float: right;
-    margin-top: -10px;
-}
-
-.select-item {
-    width: 50px;
-    height: 50px;
-    margin: 0 10px;
-}
-
-
-.Play{
+.Play {
     font-size: 60px;
 }
 
 
 .rel {
     position: relative;
+    transition: 2s ease-out;
+    margin: 0px 20px;
 }
 
 
@@ -230,18 +153,28 @@
     display: none;
     position: absolute;
     height: 100%;
-    width:100%;
+    width: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(16, 184, 196, 0.532);
+    background-color: rgba(29, 57, 79, 0.532);
+    
 }
 
 .rel:hover .hover_boganda {
     display: flex;
     justify-content: center;
     align-items: center;
+
+
 }
 
-.rasm_1{
+
+.rasm_1 {
     width: 100%;
+}
+
+
+.gl_title{
+    font-size: 120px;
+    color: white;
 }

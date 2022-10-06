@@ -68,12 +68,11 @@ const Home = () => {
     <All>
       <section className='fon_home'>
         <div className="container">
-
           <div className="row">
             <div className="col-12 soz_for">
               <div className="row">
                 <div className="col-6">
-                  <h1><img src="kom.png" alt="" /></h1>
+                  <p className='gl_title'>MUsic</p>
                   <p className='music_avtor'>Ved and Tara fall in love while on a holiday in Corsica and decide to keep their real identities undisclosed. Tara returns to Delhi and meets a new Ved, who is trying to discover his true self.</p>
                   <p className='text_red'>GENRES</p>
                   <p className='text_wight'>Senior Veteran</p>
@@ -93,7 +92,7 @@ const Home = () => {
               <div>
                 <div className="razn">
                   <p>Music you must sling</p>
-                  <select name="music" id="music">
+                  <select name="music" id="music" className='filters_map'>
                     <option value="">Filters</option>
                     <option value=""></option>
                     <option value=""></option>
