@@ -53,29 +53,35 @@ const Home = () => {
 
     }
 
-    const navigate = useNavigate()
-    const Going = async (ID) => {
-        console.log(ID);
+    const navigate = useNavigate();
 
-        var artistParametres = {
+    const Going = async (name) => {
+        console.log(name);
+
+        let artistParametres = {
             method: "GET",
             headers: {
                 "Content-type": "application/json",
                 "Authorization": "Bearer " + token
             }
         }
-        var aristID = await fetch("https://api.spotify.com/v1/search?q=" + inputWord + "&type=track", artistParametres)
+        let aristID = await fetch("https://api.spotify.com/v1/search?q=" + name + "&type=track", artistParametres)
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-               
+                navigate("infomusic", {
+                    state: data.tracks.items
+                })
             })
 
-
-
-
-
     }
+
+
+
+
+
+
+
 
 
     var settings = {
