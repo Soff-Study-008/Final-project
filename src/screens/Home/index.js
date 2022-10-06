@@ -55,24 +55,80 @@ const Home = () => {
 
     }
 
+<<<<<<< HEAD
+    const navigate = useNavigate();
+
+    const Going = async (name) => {
+        console.log(name);
+
+        let artistParametres = {
+=======
     const navigate = useNavigate()
     const Going = async (ID) => {
         console.log(ID);
         var artistParametres = {
+>>>>>>> 82b544e329af2db207bb4d3db150a303860ef55f
             method: "GET",
             headers: {
                 "Content-type": "application/json",
                 "Authorization": "Bearer " + token
             }
         }
-        var albums = await fetch("https://api.spotify.com/v1/artists/" + ID + "/albums" + "?include_groups=album&market=US&limit=50", artistParametres)
+        let aristID = await fetch("https://api.spotify.com/v1/search?q=" + name + "&type=track", artistParametres)
             .then(response => response.json())
-            .then((data) => {
+            .then(data => {
                 console.log(data);
-                navigate("/infomusic", {
-                    state: data
+                navigate("infomusic", {
+                    state: data.tracks.items
                 })
             })
+<<<<<<< HEAD
+
+    }
+
+
+
+
+
+
+
+
+
+    var settings = {
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 6,
+        slidesToScroll: 3,
+        initialSlide: 0,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
+=======
     }
 
 
@@ -110,11 +166,40 @@ const Home = () => {
     //         }
     //     ]
     // };
+>>>>>>> 82b544e329af2db207bb4d3db150a303860ef55f
 
     return (
         <All>
             <section className='fon_home'>
                 <div className="container">
+<<<<<<< HEAD
+                    <input type="input" placeholder='search' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
+                        if (event.key == "Enter") {
+                            Searching()
+                        }
+                    }} />
+                    <button onClick={Searching}>Search</button>
+                    <div className="row">
+                        {
+                            (data.length > 0) ? (
+                                data.map((v, i) => {
+                                    return <div key={i} className="col-3">
+                                        <div className="card">
+                                            <img src={v.images[0].url} alt="" />
+                                            <h1>{v.name}</h1>
+                                            <button onClick={() => Going(v.name)} className="btn btn-warning">Play</button>
+                                        </div>
+
+                                    </div>
+                                })
+                            ) : (
+                                <h1>error</h1>
+                            )
+                        }
+                    </div>
+
+=======
+>>>>>>> 82b544e329af2db207bb4d3db150a303860ef55f
                     <div className="row">
                         <div className="col-12 soz_for">
                             <div className="row">
