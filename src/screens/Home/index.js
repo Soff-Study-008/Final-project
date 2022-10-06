@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 import { AiFillPlayCircle } from "react-icons/ai";
+import { useNavigate } from 'react-router-dom';
 const Home = () => {
 
   const options = {
@@ -64,6 +65,19 @@ const Home = () => {
     ]
   };
 
+  let navigate = useNavigate()
+
+  function  NextMusic (v) {
+
+    navigate(
+      "/infomusic",
+      {
+        state: "dfghj"
+      }
+
+    )
+  }
+
   return (
     <All>
       <section className='fon_home'>
@@ -110,8 +124,7 @@ const Home = () => {
 
                               <img src={v.images.coverart} alt="" className='rasm_1' />
                               <div className='hover_boganda'>
-                                <p className='Play'><AiFillPlayCircle /></p>
-
+                                <p className='Play' onClick={()=>NextMusic(v)}><AiFillPlayCircle /></p>
                               </div>
                             </div>
                             <p className='text-light f-1'>{v.title}</p>
