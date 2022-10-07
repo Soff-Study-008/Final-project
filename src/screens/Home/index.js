@@ -146,11 +146,7 @@ const Home = () => {
                                         }} />
                                         <button className='bt_seacrh' onClick={Searching}><FaSearch /></button>
                                     </div>
-                                        <select name="music" id="music" className='filtres_map'>
-                                            <option value="">Filters</option>
-                                            <option value=""></option>
-                                            <option value=""></option>
-                                        </select>
+                                       
                                 </div>
                                 
                                     {
