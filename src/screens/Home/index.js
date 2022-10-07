@@ -78,14 +78,6 @@ const Home = () => {
 
     }
 
-
-
-
-
-
-
-
-
     var settings = {
         dots: false,
         infinite: false,
@@ -125,9 +117,6 @@ const Home = () => {
         <All>
             <section className='fon_home'>
                 <div className="container">
-               
-                        
-
                     <div className="row">
                         <div className="col-12 soz_for">
                             <div className="row">
@@ -161,7 +150,6 @@ const Home = () => {
                                     </div>
                                   
                                 </div>
-
                                 {
                                     (data.length > 0) ? (
                                         data.map((v, i) => {
