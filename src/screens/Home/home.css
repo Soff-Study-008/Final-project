@@ -1,9 +1,15 @@
-.section_top{
+.section_header {
+    background-image: url("https://sam-music.at/out/pictures/promo/header-sammusic-categories-5.jpg");
     text-align: center;
+    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    margin-bottom: 30px;
 }
 
 .soz_for {
-    background-color: rgb(0, 0, 0);
+    /* background-color: rgb(0, 0, 0); */
     width: 100%;
     padding: 20px;
     min-height: 50vh;
@@ -14,13 +20,13 @@
     background-color: rgb(0, 0, 0);
 }
 
-.top_img{
+.top_img {
     object-fit: cover;
     width: 70%;
     border-radius: 50px;
 }
 
-.slider_map{
+.slider_map {
     padding: 50px 0;
 }
 
@@ -28,7 +34,11 @@
     color: white;
     font-size: 17px;
     font-weight: bold;
-    margin-top: 20px;
+    border: 2px solid rgb(250, 250, 250);
+    border-radius: 30px;
+    padding: 20px;
+    margin: 20px 100px;
+    background: rgba(2, 2, 2, 0.632);
 }
 
 .bt_watch {
@@ -67,13 +77,14 @@
     margin-right: 20px;
 }
 
-.categoryCard{
-    background-color: rgba(39, 38, 38, 0.457) ;
+.categoryCard {
+    background-color: rgba(39, 38, 38, 0.457);
     padding: 10px 5px;
     border-radius: 5px;
     text-align: center;
 }
-.cImg{
+
+.cImg {
     width: 90%;
     object-fit: cover;
     border-radius: 5px;
@@ -82,10 +93,11 @@
 
 }
 
-.categoryCard:hover .cImg{
+.categoryCard:hover .cImg {
     border-radius: 30px;
 }
-.cWord{
+
+.cWord {
     color: white;
     font-weight: 500;
     margin-top: 10px;
@@ -109,10 +121,12 @@
 
 
 .razn {
+    display: flex;
+    display: block;
     padding-top: 50px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .razn p {
@@ -227,11 +241,11 @@
 
 /************************************************ Section_About start ************************************/
 
-.card_section{
+.card_section {
     text-align: center;
 }
 
-.card_section-flex{
+.card_section-flex {
     display: flex;
     justify-content: center;
 }
@@ -242,6 +256,11 @@
     height: 150px;
     border-radius: 50%;
     margin-bottom: 10px;
+}
+
+.section_img:hover{
+    cursor: pointer;
+    filter: blur(1px);
 }
 
 .section_title {
@@ -270,7 +289,7 @@
     border-radius: 10px;
 }
 
-.section_play{
+.section_play {
     color: #fff;
     font-size: 40px;
 }

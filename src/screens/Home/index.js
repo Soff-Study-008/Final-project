@@ -98,7 +98,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        
+
         let authoToken = {
             method: "POST",
             headers: {
@@ -112,10 +112,10 @@ const Home = () => {
                 setToken(data.access_token)
             })
 
-           
+
     }, [])
 
-    
+
     async function Searching() {
         var artistParametres = {
             method: "GET",
@@ -215,29 +215,29 @@ const Home = () => {
     return (
         <All>
             <section className='fon_home'>
-               
                 <div className="container">
-                    <div className="razn">
-                        <div className="search_box">
-                            <input className='input-search' type="input" placeholder='Search Albom' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
-                                if (event.key == "Enter") {
-                                    Searching()
-                                }
-                            }} />
-                            <button className='bt_seacrh' onClick={Searching}><FaSearch /></button>
+                    <div className="section_header">
+                        <div className="razn">
+                            <div className="search_box">
+                                <input className='input-search' type="input" placeholder='Search Albom' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
+                                    if (event.key == "Enter") {
+                                        Searching()
+                                    }
+                                }} />
+                                <button className='bt_seacrh' onClick={Searching}><FaSearch /></button>
+                            </div>
                         </div>
-                    </div>
-                    <div className="section_top">
-                        <div className="soz_for">
-                            <img src="https://media.graphassets.com/4L03glPTAe3c3Ongtpzh" alt="" className="top_img" />
-                            <p className='music_avtor'>Ved and Tara fall in love while on a holiday in Corsica and decide to keep their real identities undisclosed. Tara returns to Delhi and meets a new Ved, who is trying to discover his true self. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate velit voluptates tempora reiciendis animi quae repellendus, vero maiores fugit officiis quis nisi assumenda dolor incidunt est optio, porro debitis ducimus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum aliquid, veritatis culpa dolores eos tempora modi accusamus necessitatibus veniam voluptate quas sequi cum aperiam recusandae quaerat nihil ex dolor cumque consequuntur corrupti minus placeat earum? Nam quas earum doloribus tempore!</p>
-                            <p className='text_red'>GENRES</p>
-                            <p className='text_wight'>Senior Veteran</p>
-                            <button className='bt_watch'>
-                                WATCH
-                                <img src="bt_fr.png" alt="" className='bt_img' />
-                            </button>
-                            <button className='bt_mylist'>MY LIST <span>+</span> </button>
+                        <div className="section_top">
+                            <div className="soz_for">
+                                <p className='music_avtor'>Ved and Tara fall in love while on a holiday in Corsica and decide to keep their real identities undisclosed. Tara returns to Delhi and meets a new Ved, who is trying to discover his true self. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate velit voluptates tempora reiciendis animi quae repellendus, vero maiores fugit officiis quis nisi assumenda dolor incidunt est optio, porro debitis ducimus. </p>
+                                <p className='text_red'>GENRES</p>
+                                <p className='text_wight'>Senior Veteran</p>
+                                <button className='bt_watch'>
+                                    WATCH
+                                    <img src="bt_fr.png" alt="" className='bt_img' />
+                                </button>
+                                <button className='bt_mylist'>MY LIST <span>+</span> </button>
+                            </div>
                         </div>
                     </div>
                     <div className="row">
