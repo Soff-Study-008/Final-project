@@ -71,7 +71,7 @@ const Home = () => {
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                navigate("infomusic", {
+                navigate("/infomusic", {
                     state: data.tracks.items
                 })
             })
@@ -159,11 +159,7 @@ const Home = () => {
                                         }} />
                                         <button className='bt_seacrh' onClick={Searching}><FaSearch /></button>
                                     </div>
-                                    <select name="music" id="music" className='filtres_map'>
-                                        <option value="">Filters</option>
-                                        <option value=""></option>
-                                        <option value=""></option>
-                                    </select>
+                                  
                                 </div>
 
                                 {
@@ -178,7 +174,7 @@ const Home = () => {
                                                         <p className="section_popularty">popularity : <span> {v.popularity}</span></p>
                                                     </div>
                                                     <p className="section_play"><AiFillPlayCircle /></p>
-                                                    <button onClick={() => Going(v.id)} className="btn btn-warning">Play</button>
+                                                    <button onClick={() => Going(v.name)} className="btn btn-warning">Play</button>
                                                 </div>
 
                                             </div>

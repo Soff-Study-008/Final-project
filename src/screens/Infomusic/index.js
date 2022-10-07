@@ -18,21 +18,9 @@ export const Infomusic = () => {
       <div className="fon p-3">
         <div className="container">
           <div className="row">
-            {
-              comingData.map((v,i)=>{
-                return <div className="col-3" key={i}>
-                  <div className="card">
-                    <img src="" alt=""  />
-                    <h1>{v.name}</h1>
-                    <audio src={v.preview_url} controls></audio>
-                  </div>
-                </div>
-              })
-            }
-          </div>
-          <div className="col-8">
+          <div className="col-7">
             <div className="player">
-              <img src="https://i.ytimg.com/vi/PUFsWOKb5h0/maxresdefault.jpg" className='rasm_100' alt="" />
+              <img src="https://music.apple.com/assets/meta/apple-music-4d84eb1deedb9217bf940603688603b0.png"className='rasm_100' alt="" />
               <div className="absol">
                 <div className='flex_togasi'>
                   <div className='black_fon'>
@@ -57,8 +45,23 @@ export const Infomusic = () => {
               </ul>
             </div>
           </div>
-          <div className="col-4">
-
+          <div className="col-5">
+           <div className="row ovr">
+           {
+            comingData.map((v,i)=>{
+               return <div className="col-12 m-2">
+               
+              <div className='d-flex'>
+                <img src="https://music.apple.com/assets/meta/apple-music-4d84eb1deedb9217bf940603688603b0.png" alt="" className='img_nav' />
+                <audio src={v.preview_url} controls></audio>
+                <p className='map_name'>{v.name}</p>
+              </div>
+               </div> 
+            })
+           }
+            
+           </div>
+          </div>
           </div>
         </div>
       </div>

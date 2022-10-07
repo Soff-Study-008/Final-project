@@ -17,7 +17,7 @@ const Header = () => {
         <h2 className="nav_title pt-1">MUsic</h2>
         <ul className="nav_item">
           <li className="nav_list">
-            <a href="#!" className="nav_link">HOME</a>
+            <a href="/" className="nav_link">HOME</a>
           </li>
           <li className="nav_list">
             <a href="#!" className="nav_link">TV SHOW</a>
