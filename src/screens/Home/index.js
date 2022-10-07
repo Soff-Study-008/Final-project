@@ -1,16 +1,17 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import Slider from "react-slick";
 import { FaSearch } from 'react-icons/fa';
-import { AiFillPlayCircle } from 'react-icons/ai';
 import All from '../../components/All'
 import "./home.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useNavigate } from 'react-router-dom';
-import Slider from 'react-slick';
 
 // import Slider from "react-slick";
 // import { AiFillPlayCircle } from "react-icons/ai";
+// import { AiFillPlayCircle } from 'react-icons/ai';
+
 
 const SPOTIFY_CLIENT_ID = '65472f85eb614e56b8c4832c244913b6'
 const SPOTIFY_CLIENT_SECRET = 'e2088199bb15436fa847cbf17a96447d'
@@ -178,30 +179,14 @@ const Home = () => {
             <section className='fon_home'>
                 <button onClick={() => TakeCategory2()}>get Category</button>
                 <div className="container">
-                    <input className='input-search' type="input" placeholder='search' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
-                        if (event.key == "Enter") {
-                            Searching()
-                        }
-                    }} />
-                    <button className='bt_seacrh' onClick={Searching}><FaSearch /></button>
-
-                    <div className="row">
-                        <div className="col-12 soz_for">
-                            <div className="row">
-                                <div className="col-6">
-                                    <h1 className='gl_title'>MUsic</h1>
-                                    <p className='music_avtor'>Ved and Tara fall in love while on a holiday in Corsica and decide to keep their real identities undisclosed. Tara returns to Delhi and meets a new Ved, who is trying to discover his true self.</p>
-                                    <p className='text_red'>GENRES</p>
-                                    <p className='text_wight'>Senior Veteran</p>
-                                    <div className="d-flex">
-                                        <button className='d-flex bt_watch'>
-                                            WATCH
-                                            <img src="bt_fr.png" alt="" className='bt_img' />
-                                        </button>
-                                        <button className='bt_mylist'>MY LIST <span>+</span> </button>
-                                    </div>
-                                </div>
-                            </div>
+                    <div className="razn">
+                        <div className="search_box">
+                            <input className='input-search' type="input" placeholder='Search Albom' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
+                                if (event.key == "Enter") {
+                                    Searching()
+                                }
+                            }} />
+                            <button className='bt_seacrh' onClick={Searching}><FaSearch /></button>
                         </div>
                     </div>
 
@@ -270,34 +255,25 @@ const Home = () => {
                     <div>
                         <div className="slider_map">
                             <div>
-                                <div className="razn">
-                                    <div className="search_box">
-
-                                    </div>
-
-                                </div>
-
-                                {
-                                    (data.length > 0) ? (
-                                        data.map((v, i) => {
-                                            return <div key={i} className="about_section">
-                                                <div className="card_section">
+                                <Slider {...settings}>
+                                    {
+                                        (data.length > 0) ? (
+                                            data.map((v, i) => {
+                                                return <div className="card_section" onClick={() => Going(v.name)} >
                                                     <img className='section_img' src={v.images[0].url} alt="" />
-                                                    <h4 className='section_title'>{v.name}</h4>
-                                                    <div className="section_info">
+                                                    <p className='section_title'>{v.name}</p>
+                                                </div>
+                                                {/* <div className="section_info">
                                                         <p className="info_text">{v.genres[0]}</p>
                                                         <p className="section_popularty">popularity : <span> {v.popularity}</span></p>
                                                     </div>
-                                                    <p className="section_play"><AiFillPlayCircle /></p>
-                                                    <button onClick={() => Going(v.name)} className="btn btn-warning">Play</button>
-                                                </div>
-
-                                            </div>
-                                        })
-                                    ) : (
-                                        <h1></h1>
-                                    )
-                                }
+                                                    <p className="section_play"><AiFillPlayCircle /></p> */}
+                                            })
+                                        ) : (
+                                            <h1>error</h1>
+                                        )
+                                    }
+                                </Slider>
                             </div>
                         </div>
                     </div>

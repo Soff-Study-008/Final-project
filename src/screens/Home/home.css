@@ -1,13 +1,23 @@
+.section_top{
+    text-align: center;
+}
+
 .soz_for {
     background-color: rgb(0, 0, 0);
     width: 100%;
     padding: 20px;
-    min-height: 100vh;
+    min-height: 50vh;
     position: relative;
 }
 
 .fon_home {
     background-color: rgb(0, 0, 0);
+}
+
+.top_img{
+    object-fit: cover;
+    width: 100%;
+    border-radius: 50px;
 }
 
 .slider_map{
@@ -99,6 +109,7 @@
 
 
 .razn {
+    padding-top: 50px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -114,8 +125,8 @@
 .abs {
     position: absolute;
     width: 76%;
-    height: 400px;
-    top: 90%;
+    height: 82%;
+    top: 70%;
     left: 11%;
     background-color: rgba(0, 0, 0, 0.436);
     padding: 20px 50px;
@@ -216,34 +227,22 @@
 
 /************************************************ Section_About start ************************************/
 
-.card_section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgb(78, 77, 77);
-    margin: 5px;
-    padding: 10px;
-    border-radius: 15px;
-    box-shadow: 10px 10px 10px;
-    cursor: pointer;
-    overflow: auto;
-}
-
-.card_section:hover{
-    transform: translateX(8px);
+.card_section{
+    text-align: center;
 }
 
 .section_img {
     object-fit: cover;
-    width: 80px;
-    height: 80px;
-    border-radius: 15px;
-    background-position: top;
-    box-shadow: 10px 10px 10px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
 }
 
 .section_title {
     color: #fff;
+    font-size: 13px;
+    margin-right: 35px;
 }
 
 
