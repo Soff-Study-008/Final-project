@@ -18,6 +18,13 @@ const Home = () => {
     const [token, setToken] = useState("")
     const [inputWord, setInputWord] = useState("")
     const [data, setData] = useState([])
+    const [miksFilter, setMiksFilter] = useState([
+        { img: "https://i1.sndcdn.com/artworks-ENo3zBIbo3nWCzLf-6bod5g-t500x500.jpg", name: "Rap music", value: "rap" },
+        { img: "https://www.bulletproof.com/wp-content/uploads/2020/05/writing-down-his-plan-of-action-picture-id874872024.jpg", name: "Work music", value: "work" },
+        { img: "https://phantom-marca.unidadeditorial.es/746e69f29df0fa7da1f9df1cffc2af10/crop/0x20/1499x861/resize/1320/f/jpg/assets/multimedia/imagenes/2022/01/12/16419960151339.jpg", name: "Workout music", value: "w" },
+        { img: "https://www.history.ac.uk/sites/default/files/styles/small/public/2019-07/mc_ihr_119_1.JPG?h=9eb0d413&itok=K9ma34SU", name: "Study music", value: "s" },
+        { img: "https://static01.nyt.com/images/2018/12/30/arts/30yearend-pop2/merlin_147857643_8e0c5c65-4549-4946-b51d-49425b9dcf24-articleLarge.jpg?quality=75&auto=webp&disable=upscale", name: "Pop music", value: "p" },
+    ])
 
 
 
@@ -75,79 +82,39 @@ const Home = () => {
                     state: data.tracks.items
                 })
             })
-
     }
 
 
-
-
-
-
-
-
-
-    var settings = {
-        dots: false,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 6,
-        slidesToScroll: 3,
-        initialSlide: 0,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
+    const TakeCategory = async (name_category) => {
+        let artistParametres = {
+            method: "GET",
+            headers: {
+                "Content-type": "application/json",
+                "Authorization": "Bearer " + token
             }
-        ]
-    };
+        }
+
+        let aristID = await fetch("https://api.spotify.com/v1/search?q=" + name_category + "&type=track", artistParametres)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                navigate("/infomusic", {
+                    state: data.tracks.items
+                })
+            })
+    }
+
 
     return (
         <All>
             <section className='fon_home'>
                 <div className="container">
-                    {/* <input type="input" placeholder='search' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
+                    <input className='input-search' type="input" placeholder='search' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
                         if (event.key == "Enter") {
                             Searching()
                         }
                     }} />
-                    <button onClick={Searching}>Search</button>
-                    <div className="row">
-                        {
-                            (data.length > 0) ? (
-                                data.map((v, i) => {
-                                    return <div key={i} className="col-3">
-                                        <div className="card">
-                                            <img src={v.images[0].url} alt="" />
-                                            <h1>{v.name}</h1>
-                                            <button onClick={() => Going(v.name)} className="btn btn-warning">Play</button>
-                                        </div>
-
-                                    </div>
-                                })
-                            ) : (
-                                <h1>error</h1>
-                            )
-                        } */}
+                    <button className='bt_seacrh' onClick={Searching}><FaSearch /></button>
 
                     <div className="row">
                         <div className="col-12 soz_for">
@@ -168,19 +135,28 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="abs">
+
+                    <div className="row">
+                        {
+                            miksFilter.map((v, i) => {
+                                return <div className="col-lg-2 col-md-4 col-sm-12" key={i}>
+                                    <div className="categoryCard" onClick={() => TakeCategory(v.value)}>
+                                        <img src={v.img} alt="Music pictures" className='cImg' />
+                                        <p className='cWord'>{v.name}</p>
+                                    </div>
+                                </div>
+                            })
+                        }
+
+                    </div>
+                    <div>
                         <div className="slider_map">
                             <div>
                                 <div className="razn">
                                     <div className="search_box">
-                                        <input className='input-search' type="input" placeholder='search' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
-                                            if (event.key == "Enter") {
-                                                Searching()
-                                            }
-                                        }} />
-                                        <button className='bt_seacrh' onClick={Searching}><FaSearch /></button>
+
                                     </div>
-                                  
+
                                 </div>
 
                                 {

@@ -10,6 +10,10 @@
     background-color: rgb(0, 0, 0);
 }
 
+.slider_map{
+    padding: 50px 0;
+}
+
 .music_avtor {
     color: white;
     font-size: 17px;
@@ -51,6 +55,31 @@
     border: none;
     border-radius: 12px;
     margin-right: 20px;
+}
+
+.categoryCard{
+    background-color: rgba(39, 38, 38, 0.457) ;
+    padding: 10px 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+.cImg{
+    width: 90%;
+    object-fit: cover;
+    border-radius: 5px;
+    min-height: 180px;
+    transition: 0.5s ease-out;
+
+}
+
+.categoryCard:hover .cImg{
+    border-radius: 30px;
+}
+.cWord{
+    color: white;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 .text_red {
