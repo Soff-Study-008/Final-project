@@ -125,29 +125,8 @@ const Home = () => {
         <All>
             <section className='fon_home'>
                 <div className="container">
-                    {/* <input type="input" placeholder='search' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
-                        if (event.key == "Enter") {
-                            Searching()
-                        }
-                    }} />
-                    <button onClick={Searching}>Search</button>
-                    <div className="row">
-                        {
-                            (data.length > 0) ? (
-                                data.map((v, i) => {
-                                    return <div key={i} className="col-3">
-                                        <div className="card">
-                                            <img src={v.images[0].url} alt="" />
-                                            <h1>{v.name}</h1>
-                                            <button onClick={() => Going(v.name)} className="btn btn-warning">Play</button>
-                                        </div>
-
-                                    </div>
-                                })
-                            ) : (
-                                <h1>error</h1>
-                            )
-                        } */}
+               
+                        
 
                     <div className="row">
                         <div className="col-12 soz_for">
