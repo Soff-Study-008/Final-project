@@ -1,28 +1,28 @@
-.rasm_100{
+.rasm_100 {
     width: 100%;
     border-radius: 10px;
 }
 
-.fon{
+.fon {
     width: 100%;
     height: 100%;
     background-color: black;
 }
 
-.flex_togasi{
+.flex_togasi {
     display: flex;
     padding: 10px;
-    
+
 }
 
-.flex_togasi p{
+.flex_togasi p {
     color: white;
     font-size: 25px;
     margin-top: -1.5px;
 
 }
 
-.absol{
+.absol {
     position: absolute;
     width: 100%;
     top: 0;
@@ -33,7 +33,7 @@
 }
 
 
-.black_fon{
+.black_fon {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -44,23 +44,57 @@
 }
 
 
-.ovr{
+.ovr {
     overflow-y: auto;
+
     height: 800px;
 }
 
-.map_name{
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 5px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(39, 38, 38, 0.457); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(76, 70, 70, 0.457); 
+  }
+
+.map_name {
     color: white;
     margin-top: 10px;
     margin-left: 10px;
     font-weight: bold;
+    margin-bottom: 0;
+    margin-top: 0;
+    max-width: 230px;
 }
 
 
-.img_nav{
+.img_nav {
     width: 60px;
     height: 60px;
     border-radius: 10px;
     margin-right: 10px;
     object-fit: cover;
 }
+
+
+.audio_map {
+    height: 30px;
+    margin-top: 5px;
+    
+}
+
+
+
