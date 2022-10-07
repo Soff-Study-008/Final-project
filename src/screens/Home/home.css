@@ -6,12 +6,18 @@
     background-color: rgb(0, 0, 0);
     width: 100%;
     padding: 20px;
-    min-height: 100vh;
+    min-height: 50vh;
     position: relative;
 }
 
 .fon_home {
     background-color: rgb(0, 0, 0);
+}
+
+.top_img{
+    object-fit: cover;
+    width: 100%;
+    border-radius: 50px;
 }
 
 .slider_map{
@@ -103,6 +109,7 @@
 
 
 .razn {
+    padding-top: 50px;
     width: 100%;
     display: flex;
     justify-content: space-between;

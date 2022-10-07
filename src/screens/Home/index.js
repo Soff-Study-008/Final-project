@@ -131,20 +131,17 @@ const Home = () => {
                     </div>
 
                     <div className="section_top">
-                        <div className="col-12 soz_for">
-                            <div className="col-6">
-                                <h1 className='gl_title'>MUsic</h1>
-                                <p className='music_avtor'>Ved and Tara fall in love while on a holiday in Corsica and decide to keep their real identities undisclosed. Tara returns to Delhi and meets a new Ved, who is trying to discover his true self.</p>
-                                <p className='text_red'>GENRES</p>
-                                <p className='text_wight'>Senior Veteran</p>
-                                <div className="d-flex">
-                                    <button className='d-flex bt_watch'>
-                                        WATCH
-                                        <img src="bt_fr.png" alt="" className='bt_img' />
-                                    </button>
-                                    <button className='bt_mylist'>MY LIST <span>+</span> </button>
-                                </div>
-                            </div>
+                        <div className="soz_for">
+                            {/* <h1 className='gl_title'>MUsic</h1> */}
+                            <img src="https://media.graphassets.com/4L03glPTAe3c3Ongtpzh" alt="" className="top_img" />
+                            <p className='music_avtor'>Ved and Tara fall in love while on a holiday in Corsica and decide to keep their real identities undisclosed. Tara returns to Delhi and meets a new Ved, who is trying to discover his true self. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate velit voluptates tempora reiciendis animi quae repellendus, vero maiores fugit officiis quis nisi assumenda dolor incidunt est optio, porro debitis ducimus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum aliquid, veritatis culpa dolores eos tempora modi accusamus necessitatibus veniam voluptate quas sequi cum aperiam recusandae quaerat nihil ex dolor cumque consequuntur corrupti minus placeat earum? Nam quas earum doloribus tempore!</p>
+                            <p className='text_red'>GENRES</p>
+                            <p className='text_wight'>Senior Veteran</p>
+                            <button className='bt_watch'>
+                                WATCH
+                                <img src="bt_fr.png" alt="" className='bt_img' />
+                            </button>
+                            <button className='bt_mylist'>MY LIST <span>+</span> </button>
                         </div>
                     </div>
                     <div className="row">
@@ -164,7 +161,6 @@ const Home = () => {
                         <div className="slider_map">
                             <div>
                                 <Slider {...settings}>
-
                                     {
                                         (data.length > 0) ? (
                                             data.map((v, i) => {
@@ -183,10 +179,6 @@ const Home = () => {
                                         )
                                     }
                                 </Slider>
-
-
-
-
                             </div>
                         </div>
                     </div>
