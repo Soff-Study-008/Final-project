@@ -7,6 +7,7 @@ import "./home.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useNavigate } from 'react-router-dom';
+import Slider from 'react-slick';
 
 // import Slider from "react-slick";
 // import { AiFillPlayCircle } from "react-icons/ai";
@@ -18,13 +19,45 @@ const Home = () => {
     const [token, setToken] = useState("")
     const [inputWord, setInputWord] = useState("")
     const [data, setData] = useState([])
-    const [miksFilter, setMiksFilter] = useState([
-        { img: "https://i1.sndcdn.com/artworks-ENo3zBIbo3nWCzLf-6bod5g-t500x500.jpg", name: "Rap music", value: "rap" },
-        { img: "https://www.bulletproof.com/wp-content/uploads/2020/05/writing-down-his-plan-of-action-picture-id874872024.jpg", name: "Work music", value: "work" },
-        { img: "https://phantom-marca.unidadeditorial.es/746e69f29df0fa7da1f9df1cffc2af10/crop/0x20/1499x861/resize/1320/f/jpg/assets/multimedia/imagenes/2022/01/12/16419960151339.jpg", name: "Workout music", value: "w" },
-        { img: "https://www.history.ac.uk/sites/default/files/styles/small/public/2019-07/mc_ihr_119_1.JPG?h=9eb0d413&itok=K9ma34SU", name: "Study music", value: "s" },
-        { img: "https://static01.nyt.com/images/2018/12/30/arts/30yearend-pop2/merlin_147857643_8e0c5c65-4549-4946-b51d-49425b9dcf24-articleLarge.jpg?quality=75&auto=webp&disable=upscale", name: "Pop music", value: "p" },
-    ])
+    const [miksFilter, setMiksFilter] = useState([])
+    const [miksFilter2, setMiksFilter2] = useState([])
+    const [miksFilter3, setMiksFilter3] = useState([])
+
+    let settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        initialSlide: 0,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    }
+
 
 
 
@@ -104,10 +137,46 @@ const Home = () => {
             })
     }
 
+    const TakeCategory2 = async () => {
+        let artistParametres = {
+            method: "GET",
+            headers: {
+                "Content-type": "application/json",
+                "Authorization": "Bearer " + token
+            }
+        }
+
+        let aristID = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFEC4WFtoNRpw/playlists", artistParametres)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setMiksFilter(data.playlists.items)
+            })
+        let aristID1 = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFLVaM30PMBm4/playlists", artistParametres)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setMiksFilter2(data.playlists.items)
+            })
+        let aristID2 = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFQIL0AXnG5AK/playlists", artistParametres)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setMiksFilter3(data.playlists.items)
+            })
+    }
+
+    // TakeCategory2()
+
+    // https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFEC4WFtoNRpw/playlists  pop music
+    // https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFLVaM30PMBm4/playlists  yoz
+    // https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFQIL0AXnG5AK/playlists  popular
+
 
     return (
         <All>
             <section className='fon_home'>
+                <button onClick={() => TakeCategory2()}>get Category</button>
                 <div className="container">
                     <input className='input-search' type="input" placeholder='search' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
                         if (event.key == "Enter") {
@@ -136,19 +205,68 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="row">
+                    <h1>Pop music</h1>
+                    <Slider {...settings}>
                         {
-                            miksFilter.map((v, i) => {
-                                return <div className="col-lg-2 col-md-4 col-sm-12" key={i}>
-                                    <div className="categoryCard" onClick={() => TakeCategory(v.value)}>
-                                        <img src={v.img} alt="Music pictures" className='cImg' />
-                                        <p className='cWord'>{v.name}</p>
+                            (miksFilter.length > 0) ? (
+                                miksFilter.map((v, i) => {
+                                    return <div className="col-lg-2 col-md-4 col-sm-12" key={i}>
+                                        <div className="categoryCard" onClick={() => TakeCategory(v.name)}>
+                                            <img src={v.images[0].url} alt="Music pictures" className='cImg' />
+                                            <p className='cWord'>{v.name}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            })
+                                })
+                            ) : (
+                                <h1>malumot yoq</h1>
+                            )
+
                         }
 
-                    </div>
+                    </Slider>
+
+                    <h1>Summer music</h1>
+
+
+                    <Slider {...settings}>
+                        {
+                            (miksFilter2.length > 0) ? (
+                                miksFilter2.map((v, i) => {
+                                    return <div className="col-lg-2 col-md-4 col-sm-12" key={i}>
+                                        <div className="categoryCard" onClick={() => TakeCategory(v.name)}>
+                                            <img src={v.images[0].url} alt="Music pictures" className='cImg' />
+                                            <p className='cWord'>{v.name}</p>
+                                        </div>
+                                    </div>
+                                })
+                            ) : (
+                                <h1>malumot yoq</h1>
+                            )
+
+                        }
+
+                    </Slider>
+
+                    <h1>Popular music</h1>
+
+                    <Slider {...settings}>
+                        {
+                            (miksFilter3.length > 0) ? (
+                                miksFilter3.map((v, i) => {
+                                    return <div className="col-lg-2 col-md-4 col-sm-12" key={i}>
+                                        <div className="categoryCard" onClick={() => TakeCategory(v.name)}>
+                                            <img src={v.images[0].url} alt="Music pictures" className='cImg' />
+                                            <p className='cWord'>{v.name}</p>
+                                        </div>
+                                    </div>
+                                })
+                            ) : (
+                                <h1>malumot yoq</h1>
+                            )
+
+                        }
+
+                    </Slider>
                     <div>
                         <div className="slider_map">
                             <div>
@@ -177,7 +295,7 @@ const Home = () => {
                                             </div>
                                         })
                                     ) : (
-                                        <h1>error</h1>
+                                        <h1></h1>
                                     )
                                 }
                             </div>

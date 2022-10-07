@@ -4,6 +4,7 @@ import { FaSearch } from 'react-icons/fa';
 import { BsCameraVideo,} from 'react-icons/bs';
 import { FiBell,} from 'react-icons/fi';
 import {  AiOutlineMessage } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 // import { AiFillSetting } from "react-icons/ai";
 // import { AiOutlineBell } from "react-icons/ai";
 
@@ -17,7 +18,7 @@ const Header = () => {
         <h2 className="nav_title pt-1">MUsic</h2>
         <ul className="nav_item">
           <li className="nav_list">
-            <a href="/" className="nav_link">HOME</a>
+            <Link to={"/"} className="nav_link"> HOME</Link>
           </li>
           <li className="nav_list">
             <a href="#!" className="nav_link">TV SHOW</a>
