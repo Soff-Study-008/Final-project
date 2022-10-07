@@ -125,6 +125,30 @@ const Home = () => {
         <All>
             <section className='fon_home'>
                 <div className="container">
+                    {/* <input type="input" placeholder='search' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
+                        if (event.key == "Enter") {
+                            Searching()
+                        }
+                    }} />
+                    <button onClick={Searching}>Search</button>
+                    <div className="row">
+                        {
+                            (data.length > 0) ? (
+                                data.map((v, i) => {
+                                    return <div key={i} className="col-3">
+                                        <div className="card">
+                                            <img src={v.images[0].url} alt="" />
+                                            <h1>{v.name}</h1>
+                                            <button onClick={() => Going(v.name)} className="btn btn-warning">Play</button>
+                                        </div>
+
+                                    </div>
+                                })
+                            ) : (
+                                <h1>error</h1>
+                            )
+                        } */}
+
                     <div className="row">
                         <div className="col-12 soz_for">
                             <div className="row">
@@ -156,35 +180,34 @@ const Home = () => {
                                         }} />
                                         <button className='bt_seacrh' onClick={Searching}><FaSearch /></button>
                                     </div>
-                                        <select name="music" id="music" className='filtres_map'>
-                                            <option value="">Filters</option>
-                                            <option value=""></option>
-                                            <option value=""></option>
-                                        </select>
+                                    <select name="music" id="music" className='filtres_map'>
+                                        <option value="">Filters</option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>
                                 </div>
-                                
-                                    {
-                                        (data.length > 0) ? (
-                                            data.map((v, i) => {
-                                                return <div key={i} className="about_section">
-                                                    <div className="card_section">
-                                                        <img className='section_img' src={v.images[0].url} alt="" />
-                                                        <h4 className='section_title'>{v.name}</h4>
-                                                        <div className="section_info">
-                                                            <p className="info_text">{v.genres[0]}</p>
-                                                            <p className="section_popularty">popularity : <span> {v.popularity}</span></p>
-                                                        </div>
-                                                        <p className="section_play"><AiFillPlayCircle/></p>
-                                                        <button onClick={() => Going(v.id)} className="btn btn-warning">Play</button>
-                                                    </div>
 
+                                {
+                                    (data.length > 0) ? (
+                                        data.map((v, i) => {
+                                            return <div key={i} className="about_section">
+                                                <div className="card_section">
+                                                    <img className='section_img' src={v.images[0].url} alt="" />
+                                                    <h4 className='section_title'>{v.name}</h4>
+                                                    <div className="section_info">
+                                                        <p className="info_text">{v.genres[0]}</p>
+                                                        <p className="section_popularty">popularity : <span> {v.popularity}</span></p>
+                                                    </div>
+                                                    <p className="section_play"><AiFillPlayCircle /></p>
+                                                    <button onClick={() => Going(v.id)} className="btn btn-warning">Play</button>
                                                 </div>
-                                            })
-                                        ) : (
-                                            <h1>error</h1>
-                                        )
-                                    }
-                                
+
+                                            </div>
+                                        })
+                                    ) : (
+                                        <h1>error</h1>
+                                    )
+                                }
                             </div>
                         </div>
                     </div>
