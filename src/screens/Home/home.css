@@ -1,6 +1,5 @@
 .soz_for {
-    background-image: url("https://www.soyuz.ru/public/uploads/files/2/7440962/202006151614072127241941.jpg");
-    background-size: cover;
+   background-color: rgb(0, 0, 0);
     width: 100%;
     padding: 20px;
     height: 1000px;
@@ -85,7 +84,7 @@
 
 .abs {
     position: absolute;
-    width: 79%;
+    width: 76%;
     height: 400px;
     top: 78%;
     left: 11%;
@@ -180,5 +179,11 @@
 .player{
     position: relative;
 }
+
+
+.gl_title{
+    font-size: 105px;
+}
+
 
 
