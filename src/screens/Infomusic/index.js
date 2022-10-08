@@ -16,52 +16,46 @@ export const Infomusic = () => {
   return (
     <All>
       <div className="fon p-3">
-        <div className="container">
+        <div className="container p-4">
           <div className="row">
-          <div className="col-7">
-            <div className="player">
-              <img src="https://music.apple.com/assets/meta/apple-music-4d84eb1deedb9217bf940603688603b0.png"className='rasm_100' alt="" />
-              <div className="absol">
-                <div className='flex_togasi'>
-                  <div className='black_fon'>
-                    <p><FiSettings /></p>
-                  </div>
+            <div className="col-7">
+              <div className="player">
+                <img src="https://music.apple.com/assets/meta/apple-music-4d84eb1deedb9217bf940603688603b0.png" className='rasm_100' alt="" />
+                <div className="absol">
+                  <div className='flex_togasi'>
+                    <div className='black_fon'>
+                      <p><FiSettings /></p>
+                    </div>
 
-                  <div className='black_fon'>
-                    <p><AiOutlineMenu /></p>
+                    <div className='black_fon'>
+                      <p><AiOutlineMenu /></p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="bottom_player">
-              <ul>
-                <li>Music Video</li>
-              </ul>
-              <ul>
-                <li><GrFormView /></li>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-          <div className="col-5">
-           <div className="row ovr">
-           {
-            comingData.map((v,i)=>{
-               return <div className="col-12 m-2">
-               
-              <div className='d-flex'>
-                <img src="https://music.apple.com/assets/meta/apple-music-4d84eb1deedb9217bf940603688603b0.png" alt="" className='img_nav' />
-                <audio src={v.preview_url} controls></audio>
-                <p className='map_name'>{v.name}</p>
+              <div className="bottom_player">
+
               </div>
-               </div> 
-            })
-           }
-            
-           </div>
-          </div>
+            </div>
+            <div className="col-lg-5 col-sm-12">
+              <div className="row ovr">
+                {
+                  comingData.map((v, i) => {
+                    return <div className="col-6 m-2">
+
+                      <div className='d-flex orap_map'>
+                        <img src="https://music.apple.com/assets/meta/apple-music-4d84eb1deedb9217bf940603688603b0.png" alt="" className='img_nav' />
+                        <div>
+                          <p className='map_name'>{v.name}</p>
+                          <audio className='audio_map' src={v.preview_url} controls></audio>
+                        </div>
+                      </div>
+                    </div>
+                  })
+                }
+
+              </div>
+            </div>
           </div>
         </div>
       </div>
