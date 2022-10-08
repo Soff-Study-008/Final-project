@@ -18,7 +18,7 @@ export const Infomusic = () => {
       <div className="fon p-3">
         <div className="container p-4">
           <div className="row">
-            <div className="col-7">
+            <div className="col-lg-7 col-sm-12">
               <div className="player">
                 <img src="https://music.apple.com/assets/meta/apple-music-4d84eb1deedb9217bf940603688603b0.png" className='rasm_100' alt="" />
                 <div className="absol">

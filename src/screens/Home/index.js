@@ -98,6 +98,7 @@ const Home = () => {
 
 
     useEffect(() => {
+        
         let authoToken = {
             method: "POST",
             headers: {
@@ -110,9 +111,11 @@ const Home = () => {
             .then(data => {
                 setToken(data.access_token)
             })
+
+           
     }, [])
 
-
+    
     async function Searching() {
         var artistParametres = {
             method: "GET",
@@ -202,6 +205,7 @@ const Home = () => {
             })
     }
 
+    TakeCategory2()
     // TakeCategory2()
 
     // https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFEC4WFtoNRpw/playlists  pop music
@@ -212,7 +216,7 @@ const Home = () => {
     return (
         <All>
             <section className='fon_home'>
-                <button onClick={() => TakeCategory2()}>get Category</button>
+               
                 <div className="container">
                     <div className="razn">
                         <div className="search_box">
