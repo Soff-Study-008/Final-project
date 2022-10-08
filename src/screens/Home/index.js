@@ -55,66 +55,100 @@ const Home = () => {
 
     }
 
-    const navigate = useNavigate()
-    const Going = async (ID) => {
-        console.log(ID);
-        var artistParametres = {
+    const navigate = useNavigate();
+
+    const Going = async (name) => {
+        console.log(name);
+
+        let artistParametres = {
             method: "GET",
             headers: {
                 "Content-type": "application/json",
                 "Authorization": "Bearer " + token
             }
         }
-        var albums = await fetch("https://api.spotify.com/v1/artists/" + ID + "/albums" + "?include_groups=album&market=US&limit=50", artistParametres)
+        let aristID = await fetch("https://api.spotify.com/v1/search?q=" + name + "&type=track", artistParametres)
             .then(response => response.json())
-            .then((data) => {
+            .then(data => {
                 console.log(data);
                 navigate("/infomusic", {
-                    state: data
+                    state: data.tracks.items
                 })
             })
+
     }
 
 
-    // var settings = {
-    //     dots: false,
-    //     infinite: false,
-    //     speed: 500,
-    //     slidesToShow: 6,
-    //     slidesToScroll: 3,
-    //     initialSlide: 0,
-    //     responsive: [
-    //         {
-    //             breakpoint: 1024,
-    //             settings: {
-    //                 slidesToShow: 3,
-    //                 slidesToScroll: 3,
-    //                 infinite: true,
-    //                 dots: true
-    //             }
-    //         },
-    //         {
-    //             breakpoint: 600,
-    //             settings: {
-    //                 slidesToShow: 2,
-    //                 slidesToScroll: 2,
-    //                 initialSlide: 2
-    //             }
-    //         },
-    //         {
-    //             breakpoint: 480,
-    //             settings: {
-    //                 slidesToShow: 1,
-    //                 slidesToScroll: 1
-    //             }
-    //         }
-    //     ]
-    // };
+
+
+
+
+
+
+
+    var settings = {
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 6,
+        slidesToScroll: 3,
+        initialSlide: 0,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
 
     return (
         <All>
             <section className='fon_home'>
                 <div className="container">
+                    {/* <input type="input" placeholder='search' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
+                        if (event.key == "Enter") {
+                            Searching()
+                        }
+                    }} />
+                    <button onClick={Searching}>Search</button>
+                    <div className="row">
+                        {
+                            (data.length > 0) ? (
+                                data.map((v, i) => {
+                                    return <div key={i} className="col-3">
+                                        <div className="card">
+                                            <img src={v.images[0].url} alt="" />
+                                            <h1>{v.name}</h1>
+                                            <button onClick={() => Going(v.name)} className="btn btn-warning">Play</button>
+                                        </div>
+
+                                    </div>
+                                })
+                            ) : (
+                                <h1>error</h1>
+                            )
+                        } */}
+
                     <div className="row">
                         <div className="col-12 soz_for">
                             <div className="row">
@@ -146,31 +180,30 @@ const Home = () => {
                                         }} />
                                         <button className='bt_seacrh' onClick={Searching}><FaSearch /></button>
                                     </div>
-                                       
+                                  
                                 </div>
-                                
-                                    {
-                                        (data.length > 0) ? (
-                                            data.map((v, i) => {
-                                                return <div key={i} className="about_section">
-                                                    <div className="card_section">
-                                                        <img className='section_img' src={v.images[0].url} alt="" />
-                                                        <h4 className='section_title'>{v.name}</h4>
-                                                        <div className="section_info">
-                                                            <p className="info_text">{v.genres[0]}</p>
-                                                            <p className="section_popularty">popularity : <span> {v.popularity}</span></p>
-                                                        </div>
-                                                        <p className="section_play"><AiFillPlayCircle/></p>
-                                                        <button onClick={() => Going(v.id)} className="btn btn-warning">Play</button>
-                                                    </div>
 
+                                {
+                                    (data.length > 0) ? (
+                                        data.map((v, i) => {
+                                            return <div key={i} className="about_section">
+                                                <div className="card_section">
+                                                    <img className='section_img' src={v.images[0].url} alt="" />
+                                                    <h4 className='section_title'>{v.name}</h4>
+                                                    <div className="section_info">
+                                                        <p className="info_text">{v.genres[0]}</p>
+                                                        <p className="section_popularty">popularity : <span> {v.popularity}</span></p>
+                                                    </div>
+                                                    <p className="section_play"><AiFillPlayCircle /></p>
+                                                    <button onClick={() => Going(v.name)} className="btn btn-warning">Play</button>
                                                 </div>
-                                            })
-                                        ) : (
-                                            <h1>error</h1>
-                                        )
-                                    }
-                                
+
+                                            </div>
+                                        })
+                                    ) : (
+                                        <h1>error</h1>
+                                    )
+                                }
                             </div>
                         </div>
                     </div>

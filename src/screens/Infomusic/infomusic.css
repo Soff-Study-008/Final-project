@@ -42,3 +42,25 @@
     justify-content: center;
     margin-right: 20px;
 }
+
+
+.ovr{
+    overflow-y: auto;
+    height: 800px;
+}
+
+.map_name{
+    color: white;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+
+.img_nav{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin-right: 10px;
+    object-fit: cover;
+}
