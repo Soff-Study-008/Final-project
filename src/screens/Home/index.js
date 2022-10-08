@@ -128,13 +128,11 @@ const Home = () => {
                 setData(data.artists.items)
             })
 
-
     }
 
     const navigate = useNavigate();
 
     const Going = async (name) => {
-        console.log(name);
 
         let artistParametres = {
             method: "GET",
@@ -240,94 +238,94 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="row">
-                    <Slider {...settings}>
+                        <Slider {...settings}>
 
-                        {
-                            (miksFilter.length > 0) ? (
-                                miksFilter.map((v, i) => {
-                                    return <div className="col-lg-2 col-md-4 col-sm-12" key={i}>
-                                        <div className="categoryCard" onClick={() => TakeCategory(v.name)}>
-                                            <img src={v.images[0].url} alt="Music pictures" className='cImg' />
-                                            <p className='cWord'>{v.name}</p>
+                            {
+                                (miksFilter.length > 0) ? (
+                                    miksFilter.map((v, i) => {
+                                        return <div className="col-lg-2 col-md-4 col-sm-12" key={i}>
+                                            <div className="categoryCard" onClick={() => TakeCategory(v.name)}>
+                                                <img src={v.images[0].url} alt="Music pictures" className='cImg' />
+                                                <p className='cWord'>{v.name}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                })
-                            ) : (
-                                <h1>malumot yoq</h1>
-                            )
+                                    })
+                                ) : (
+                                    <h1>malumot yoq</h1>
+                                )
 
-                        }
+                            }
 
-                    </Slider>
+                        </Slider>
 
-                    <h1>Summer music</h1>
+                        <h1>Summer music</h1>
 
 
-                    <Slider {...settings}>
-                        {
-                            (miksFilter2.length > 0) ? (
-                                miksFilter2.map((v, i) => {
-                                    return <div className="col-lg-2 col-md-4 col-sm-12" key={i}>
-                                        <div className="categoryCard" onClick={() => TakeCategory(v.name)}>
-                                            <img src={v.images[0].url} alt="Music pictures" className='cImg' />
-                                            <p className='cWord'>{v.name}</p>
+                        <Slider {...settings}>
+                            {
+                                (miksFilter2.length > 0) ? (
+                                    miksFilter2.map((v, i) => {
+                                        return <div className="col-lg-2 col-md-4 col-sm-12" key={i}>
+                                            <div className="categoryCard" onClick={() => TakeCategory(v.name)}>
+                                                <img src={v.images[0].url} alt="Music pictures" className='cImg' />
+                                                <p className='cWord'>{v.name}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                })
-                            ) : (
-                                <h1>malumot yoq</h1>
-                            )
+                                    })
+                                ) : (
+                                    <h1>malumot yoq</h1>
+                                )
 
-                        }
+                            }
 
-                    </Slider>
+                        </Slider>
 
-                    <h1>Popular music</h1>
+                        <h1>Popular music</h1>
 
-                    <Slider {...settings}>
-                        {
-                            (miksFilter3.length > 0) ? (
-                                miksFilter3.map((v, i) => {
-                                    return <div className="col-lg-2 col-md-4 col-sm-12" key={i}>
-                                        <div className="categoryCard" onClick={() => TakeCategory(v.name)}>
-                                            <img src={v.images[0].url} alt="Music pictures" className='cImg' />
-                                            <p className='cWord'>{v.name}</p>
+                        <Slider {...settings}>
+                            {
+                                (miksFilter3.length > 0) ? (
+                                    miksFilter3.map((v, i) => {
+                                        return <div className="col-lg-2 col-md-4 col-sm-12" key={i}>
+                                            <div className="categoryCard" onClick={() => TakeCategory(v.name)}>
+                                                <img src={v.images[0].url} alt="Music pictures" className='cImg' />
+                                                <p className='cWord'>{v.name}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                })
-                            ) : (
-                                <h1>malumot yoq</h1>
-                            )
+                                    })
+                                ) : (
+                                    <h1>malumot yoq</h1>
+                                )
 
-                        }
+                            }
 
-                    </Slider>
-                    <div>
-                        <div className="slider_map">
-                            <div>
-                                <Slider {...settings2}>
-                                    {
-                                        (data.length > 0) ? (
-                                            data.map((v, i) => {
-                                                return <div className="card_section" onClick={() => Going(v.name)} >
-                                                    <img className='section_img' src={v.images[0].url} alt="" />
-                                                    <p className='section_title'>{v.name}</p>
-                                                </div>
-                                                {/* <div className="section_info">
+                        </Slider>
+                        <div>
+                            <div className="slider_map">
+                                <div>
+                                    <Slider {...settings2}>
+                                        {
+                                            (data.length > 0) ? (
+                                                data.map((v, i) => {
+                                                    return <div className="card_section" onClick={() => Going(v.name)} >
+                                                        <img className='section_img' src={v.images[0].url} alt="" />
+                                                        <p className='section_title'>{v.name}</p>
+                                                    </div>
+                                                    {/* <div className="section_info">
                                                         <p className="info_text">{v.genres[0]}</p>
                                                         <p className="section_popularty">popularity : <span> {v.popularity}</span></p>
                                                     </div>
                                                     <p className="section_play"><AiFillPlayCircle /></p> */}
-                                            })
-                                        ) : (
-                                            <h1>error</h1>
-                                        )
-                                    }
-                                </Slider>
+                                                })
+                                            ) : (
+                                                <h1>error</h1>
+                                            )
+                                        }
+                                    </Slider>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 </div>
 
             </section>
