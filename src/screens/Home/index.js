@@ -264,7 +264,7 @@ const Home = () => {
 
                     </Slider>
 
-                    <h1>Summer music</h1>
+                    <h1 className='text-light'>Summer music</h1>
 
 
                     <Slider {...settings}>
@@ -286,7 +286,7 @@ const Home = () => {
 
                     </Slider>
 
-                    <h1>Popular music</h1>
+                    <h1 className='text-light'>Popular music</h1>
 
                     <Slider {...settings}>
                         {
