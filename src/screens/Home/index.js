@@ -97,34 +97,7 @@ const Home = () => {
 
 
 
-    const TakeCategory2 = async () => {
-        let artistParametres = {
-            method: "GET",
-            headers: {
-                "Content-type": "application/json",
-                "Authorization": "Bearer " + token
-            }
-        }
 
-        let aristID = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFEC4WFtoNRpw/playlists", artistParametres)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                setMiksFilter(data.playlists.items)
-            })
-        let aristID1 = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFLVaM30PMBm4/playlists", artistParametres)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                setMiksFilter2(data.playlists.items)
-            })
-        let aristID2 = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFQIL0AXnG5AK/playlists", artistParametres)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                setMiksFilter3(data.playlists.items)
-            })
-    }
 
     useEffect(() => {
 
@@ -140,6 +113,36 @@ const Home = () => {
             .then(data => {
                 setToken(data.access_token)
             })
+
+
+        const TakeCategory2 = async () => {
+            let artistParametres = {
+                method: "GET",
+                headers: {
+                    "Content-type": "application/json",
+                    "Authorization": "Bearer " + token
+                }
+            }
+
+            let aristID = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFEC4WFtoNRpw/playlists", artistParametres)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    setMiksFilter(data.playlists.items)
+                })
+            let aristID1 = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFLVaM30PMBm4/playlists", artistParametres)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    setMiksFilter2(data.playlists.items)
+                })
+            let aristID2 = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFQIL0AXnG5AK/playlists", artistParametres)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    setMiksFilter3(data.playlists.items)
+                })
+        }
         TakeCategory2()
 
 
@@ -212,6 +215,10 @@ const Home = () => {
                 })
             })
     }
+
+    // setTimeout(() => {
+    //     TakeCategory2()
+    // }, 1);
 
 
 
