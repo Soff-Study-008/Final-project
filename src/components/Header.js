@@ -31,12 +31,6 @@ const Header = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar_right">
-        <div class="search_box">
-         <input type="text" placeholder='Serach' className='input-search'  />
-         <button className='bt_seacrh'><FaSearch /></button>
-        </div>
-      </div>
       <div className="headr-icons">
         <p className="nav_icons"><AiOutlineMessage /></p>
         <p className="nav_icons"><BsCameraVideo /></p>

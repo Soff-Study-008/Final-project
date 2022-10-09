@@ -97,7 +97,37 @@ const Home = () => {
 
 
 
+    const TakeCategory2 = async () => {
+        let artistParametres = {
+            method: "GET",
+            headers: {
+                "Content-type": "application/json",
+                "Authorization": "Bearer " + token
+            }
+        }
+
+        let aristID = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFEC4WFtoNRpw/playlists", artistParametres)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setMiksFilter(data.playlists.items)
+            })
+        let aristID1 = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFLVaM30PMBm4/playlists", artistParametres)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setMiksFilter2(data.playlists.items)
+            })
+        let aristID2 = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFQIL0AXnG5AK/playlists", artistParametres)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setMiksFilter3(data.playlists.items)
+            })
+    }
+
     useEffect(() => {
+
         let authoToken = {
             method: "POST",
             headers: {
@@ -110,6 +140,9 @@ const Home = () => {
             .then(data => {
                 setToken(data.access_token)
             })
+        TakeCategory2()
+
+
     }, [])
 
 
@@ -127,13 +160,22 @@ const Home = () => {
                 console.log(data);
                 setData(data.artists.items)
             })
+            .catch((err) => {
+                setData([
+                    {
+                        name: "Erkin",
+                        images: [
+                            { url: "" }
+                        ]
+                    }
+                ])
+            })
 
     }
 
     const navigate = useNavigate();
 
     const Going = async (name) => {
-
         let artistParametres = {
             method: "GET",
             headers: {
@@ -171,36 +213,8 @@ const Home = () => {
             })
     }
 
-    const TakeCategory2 = async () => {
-        let artistParametres = {
-            method: "GET",
-            headers: {
-                "Content-type": "application/json",
-                "Authorization": "Bearer " + token
-            }
-        }
 
-        let aristID = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFEC4WFtoNRpw/playlists", artistParametres)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                setMiksFilter(data.playlists.items)
-            })
-        let aristID1 = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFLVaM30PMBm4/playlists", artistParametres)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                setMiksFilter2(data.playlists.items)
-            })
-        let aristID2 = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFQIL0AXnG5AK/playlists", artistParametres)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                setMiksFilter3(data.playlists.items)
-            })
-    }
 
-    // TakeCategory2()
 
     // https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFEC4WFtoNRpw/playlists  pop music
     // https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFLVaM30PMBm4/playlists  yoz
@@ -210,36 +224,33 @@ const Home = () => {
     return (
         <All>
             <section className='fon_home'>
-                <button onClick={() => TakeCategory2()}>get Category</button>
                 <div className="container">
-                    <div className="razn">
-                        <div className="search_box">
-                            <input className='input-search' type="input" placeholder='Search Albom' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
-                                if (event.key == "Enter") {
-                                    Searching()
-                                }
-                            }} />
-                            <button className='bt_seacrh' onClick={Searching}><FaSearch /></button>
+                    <div className="section_header">
+                        <div className="razn">
+                            <div className="search_box">
+                                <input className='input-search' type="input" placeholder='Search Albom' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
+                                    if (event.key == "Enter") {
+                                        Searching()
+                                    }
+                                }} />
+                                <button className='bt_seacrh' onClick={Searching}><FaSearch /></button>
+                            </div>
                         </div>
-                    </div>
-
-                    <div className="section_top">
-                        <div className="soz_for">
-                            {/* <h1 className='gl_title'>MUsic</h1> */}
-                            <img src="https://media.graphassets.com/4L03glPTAe3c3Ongtpzh" alt="" className="top_img" />
-                            <p className='music_avtor'>Ved and Tara fall in love while on a holiday in Corsica and decide to keep their real identities undisclosed. Tara returns to Delhi and meets a new Ved, who is trying to discover his true self. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate velit voluptates tempora reiciendis animi quae repellendus, vero maiores fugit officiis quis nisi assumenda dolor incidunt est optio, porro debitis ducimus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum aliquid, veritatis culpa dolores eos tempora modi accusamus necessitatibus veniam voluptate quas sequi cum aperiam recusandae quaerat nihil ex dolor cumque consequuntur corrupti minus placeat earum? Nam quas earum doloribus tempore!</p>
-                            <p className='text_red'>GENRES</p>
-                            <p className='text_wight'>Senior Veteran</p>
-                            <button className='bt_watch'>
-                                WATCH
-                                <img src="bt_fr.png" alt="" className='bt_img' />
-                            </button>
-                            <button className='bt_mylist'>MY LIST <span>+</span> </button>
+                        <div className="section_top">
+                            <div className="soz_for">
+                                <p className='music_avtor'>Ved and Tara fall in love while on a holiday in Corsica and decide to keep their real identities undisclosed. Tara returns to Delhi and meets a new Ved, who is trying to discover his true self. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate velit voluptates tempora reiciendis animi quae repellendus, vero maiores fugit officiis quis nisi assumenda dolor incidunt est optio, porro debitis ducimus. </p>
+                                <p className='text_red'>GENRES</p>
+                                <p className='text_wight'>Senior Veteran</p>
+                                <button className='bt_watch'>
+                                    WATCH
+                                    <img src="bt_fr.png" alt="" className='bt_img' />
+                                </button>
+                                <button className='bt_mylist'>MY LIST <span>+</span> </button>
+                            </div>
                         </div>
                     </div>
                     <div className="row">
                         <Slider {...settings}>
-
                             {
                                 (miksFilter.length > 0) ? (
                                     miksFilter.map((v, i) => {
@@ -311,11 +322,6 @@ const Home = () => {
                                                         <img className='section_img' src={v.images[0].url} alt="" />
                                                         <p className='section_title'>{v.name}</p>
                                                     </div>
-                                                    {/* <div className="section_info">
-                                                        <p className="info_text">{v.genres[0]}</p>
-                                                        <p className="section_popularty">popularity : <span> {v.popularity}</span></p>
-                                                    </div>
-                                                    <p className="section_play"><AiFillPlayCircle /></p> */}
                                                 })
                                             ) : (
                                                 <h1>error</h1>
@@ -327,7 +333,6 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-
             </section>
         </All>
     )
