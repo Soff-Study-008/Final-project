@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { FaSearch } from 'react-icons/fa';
 import All from '../../components/All'
@@ -97,7 +96,34 @@ const Home = () => {
 
 
 
+    const TakeCategory2 = async () => {
+        let artistParametres = {
+            method: "GET",
+            headers: {
+                "Content-type": "application/json",
+                "Authorization": "Bearer " + token
+            }
+        }
 
+        await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFEC4WFtoNRpw/playlists", artistParametres)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setMiksFilter(data.playlists.items)
+            })
+        await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFLVaM30PMBm4/playlists", artistParametres)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setMiksFilter2(data.playlists.items)
+            })
+        await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFQIL0AXnG5AK/playlists", artistParametres)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setMiksFilter3(data.playlists.items)
+            })
+    }
 
     useEffect(() => {
 
@@ -114,64 +140,27 @@ const Home = () => {
                 setToken(data.access_token)
             })
 
-
-        const TakeCategory2 = async () => {
-            let artistParametres = {
-                method: "GET",
-                headers: {
-                    "Content-type": "application/json",
-                    "Authorization": "Bearer " + token
-                }
-            }
-
-            let aristID = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFEC4WFtoNRpw/playlists", artistParametres)
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data);
-                    setMiksFilter(data.playlists.items)
-                })
-            let aristID1 = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFLVaM30PMBm4/playlists", artistParametres)
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data);
-                    setMiksFilter2(data.playlists.items)
-                })
-            let aristID2 = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFQIL0AXnG5AK/playlists", artistParametres)
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data);
-                    setMiksFilter3(data.playlists.items)
-                })
-        }
-        TakeCategory2()
-
+        // TakeCategory2()
 
     }, [])
 
 
     async function Searching() {
-        var artistParametres = {
+        let artistParametres = {
             method: "GET",
             headers: {
                 "Content-type": "application/json",
                 "Authorization": "Bearer " + token
             }
         }
-        var aristID = await fetch("https://api.spotify.com/v1/search?q=" + inputWord + "&type=artist", artistParametres)
+        await fetch("https://api.spotify.com/v1/search?q=" + inputWord + "&type=artist", artistParametres)
             .then(response => response.json())
             .then(data => {
                 console.log(data);
                 setData(data.artists.items)
             })
-            .catch((err) => {
-                setData([
-                    {
-                        name: "Erkin",
-                        images: [
-                            { url: "" }
-                        ]
-                    }
-                ])
+            .catch((r) => {
+             alert("uhladi")
             })
 
     }
@@ -186,7 +175,7 @@ const Home = () => {
                 "Authorization": "Bearer " + token
             }
         }
-        let aristID = await fetch("https://api.spotify.com/v1/search?q=" + name + "&type=track", artistParametres)
+        await fetch("https://api.spotify.com/v1/search?q=" + name + "&type=track", artistParametres)
             .then(response => response.json())
             .then(data => {
                 console.log(data);
@@ -206,7 +195,7 @@ const Home = () => {
             }
         }
 
-        let aristID = await fetch("https://api.spotify.com/v1/search?q=" + name_category + "&type=track", artistParametres)
+        await fetch("https://api.spotify.com/v1/search?q=" + name_category + "&type=track", artistParametres)
             .then(response => response.json())
             .then(data => {
                 console.log(data);
@@ -216,9 +205,24 @@ const Home = () => {
             })
     }
 
-    // setTimeout(() => {
-    //     TakeCategory2()
-    // }, 1);
+    // let i = 1;
+    // do {
+    //     // TakeCategory2();
+    //     console.log(1);
+    // } while (i > 4);
+
+    // let a = 0;
+    // while (a == 0) {
+    //     if (miksFilter.length > 0) {
+    //         a = 1
+    //         return TakeCategory2();
+    //     }
+    // }
+
+
+    if (miksFilter.length <=0) {
+        TakeCategory2();
+    }
 
 
 
@@ -245,7 +249,8 @@ const Home = () => {
                         </div>
                         <div className="section_top">
                             <div className="soz_for">
-                                <p className='music_avtor'>Ved and Tara fall in love while on a holiday in Corsica and decide to keep their real identities undisclosed. Tara returns to Delhi and meets a new Ved, who is trying to discover his true self. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate velit voluptates tempora reiciendis animi quae repellendus, vero maiores fugit officiis quis nisi assumenda dolor incidunt est optio, porro debitis ducimus. </p>
+                                <p className='music_avtor'>On this platform you can find the music you are looking for!</p>
+                                <p className='music_avtor'> Have fun! </p>
                                 <p className='text_red'>GENRES</p>
                                 <p className='text_wight'>Senior Veteran</p>
                                 <button className='bt_watch'>

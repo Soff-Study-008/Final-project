@@ -12,7 +12,14 @@ import { useLocation } from 'react-router-dom';
 export const Infomusic = () => {
   const location = useLocation();
   console.log(location);
-  const [comingData, setComingData] = useState(location.state)
+  const [comingData, setComingData] = useState(location.state);
+  const [playing, setPlaying] = useState(false);
+
+  // const Playing = (url) => {
+  //   const audio = new Audio(url);
+  //   audio.play();
+  // }
+
   return (
     <All>
       <div className="fon p-3">
@@ -47,7 +54,7 @@ export const Infomusic = () => {
                         <img src="https://music.apple.com/assets/meta/apple-music-4d84eb1deedb9217bf940603688603b0.png" alt="" className='img_nav' />
                         <div>
                           <p className='map_name'>{v.name}</p>
-                          <audio className='audio_map' src={v.preview_url} controls></audio>
+                          <audio className='audio_map' src={v.preview_url}  controls></audio>
                         </div>
                       </div>
                     </div>
