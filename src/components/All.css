@@ -62,6 +62,7 @@
     gap: 37px;
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 .nav_link {
@@ -227,3 +228,18 @@
 }
 
 /******************************************** footer and **************************************************/
+
+
+
+@media  screen  and (max-width:600px){
+    .headr-icons{
+        display: none;
+    }
+    .navbar_fon
+    {
+        width: 100%;
+    }
+    #nav_none{
+        display: none;
+    }
+}
