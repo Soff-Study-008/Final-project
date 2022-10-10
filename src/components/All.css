@@ -1,6 +1,6 @@
 /******************************************* header and **************************************************/
 
-*{
+* {
     font-family: 'Open Sans', sans-serif !important;
 }
 
@@ -13,7 +13,7 @@
     padding: 0 20px !important;
 }
 
-.navbar_fon{
+.navbar_fon {
     width: 100%;
     background: rgba(0, 0, 0, 0.913);
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
@@ -25,17 +25,17 @@
 }
 
 
-.nav_title{
+.nav_title {
     color: #fff;
     font-size: 35px;
     margin-top: -5px;
 }
 
-.left_img{
+.left_img {
     object-fit: cover;
     width: 50px;
     height: 50px;
-    
+
 }
 
 .navbar_title {
@@ -97,9 +97,9 @@
 }
 
 .search_box {
-   background: rgba(37, 37, 37, 0.984) ;
-   padding: 5px 20px;
-   border-radius: 20px;
+    background: rgba(37, 37, 37, 0.984);
+    padding: 5px 20px;
+    border-radius: 20px;
 }
 
 .headr-icons {
@@ -110,8 +110,8 @@
     margin-left: 50px;
 }
 
-.bt_seacrh{
-    background-color:  rgba(37, 37, 37, 0.984) ;
+.bt_seacrh {
+    background-color: rgba(37, 37, 37, 0.984);
     color: #fff;
     border: none;
 }
@@ -193,6 +193,18 @@
     margin-top: 81px;
 }
 
+
+.footer-title2 {
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-top: 81px;
+}
+
 .footer-text {
     font-family: 'Roboto';
     font-style: normal;
@@ -205,7 +217,7 @@
 .footer-info2 {
     display: flex;
     flex-direction: column;
-   margin-left: 20px;
+    margin-left: 20px;
 }
 
 .footer_text2 {
@@ -219,7 +231,7 @@
     padding-top: 15px;
 }
 
-.col2{
+.col2 {
     margin-left: 50px;
 }
 
@@ -231,15 +243,42 @@
 
 
 
-@media  screen  and (max-width:600px){
+@media screen and (max-width:600px) {
+    /* .nav_item{
+        display: none !important;
+    }
     .headr-icons{
         display: none;
+    } */
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    .navbar_fon
-    {
+
+    .footer-info2 {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+    }
+
+
+    
+    /* .headr-icons {
+        display: none;
+    } */
+
+    /* .navbar_fon {
         width: 100%;
+    } */
+.footer-title2 {
+        padding-left: 50px;
+        margin: 30px 0;
     }
-    #nav_none{
+
+    #nav_none {
         display: none;
     }
 }

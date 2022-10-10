@@ -57,9 +57,9 @@ const Footer = () => {
               <p className="footer-text">+998943662002</p>
             </div>
           </div>
-          <div className="col-2">
+          <div className="col-lg-2 col-md-4 col-sm-6">
             <div className="col2">
-              <h2 className="footer-title">Follow us</h2>
+              <h2 className="footer-title2">Follow us</h2>
               <div className="footer-info2">
                 <div className="footer_text2"><BsFacebook /></div>
                 <div className="footer_text2"><AiFillLinkedin /></div>
@@ -67,7 +67,6 @@ const Footer = () => {
                 <div className="footer_text2"><AiOutlineInstagram /></div>
                 <div className="footer_text2"><FiTwitter /></div>
               </div>
-
             </div>
           </div>
         </div>
