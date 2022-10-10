@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import Spinner from 'react-bootstrap/Spinner';
+import swal from 'sweetalert';
 
 // import Slider from "react-slick";
 // import { AiFillPlayCircle } from "react-icons/ai";
@@ -158,10 +159,16 @@ const Home = () => {
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                setData(data.artists.items)
+                setData(data.artists.items);
+                swal({
+                    title: "Find music !",
+                    text: "You clicked the button!",
+                    icon: "success",
+                    timer:3000
+                });
             })
             .catch((r) => {
-             alert("uhladi")
+                alert("uhladi")
             })
 
     }
@@ -221,7 +228,7 @@ const Home = () => {
     // }
 
 
-    if (miksFilter.length <=0) {
+    if (miksFilter.length <= 0) {
         TakeCategory2();
     }
 
