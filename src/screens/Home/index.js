@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
+import Spinner from 'react-bootstrap/Spinner';
 
 // import Slider from "react-slick";
 // import { AiFillPlayCircle } from "react-icons/ai";
@@ -237,16 +238,6 @@ const Home = () => {
             <section className='fon_home'>
                 <div className="container">
                     <div className="section_header">
-                        <div className="razn">
-                            <div className="search_box">
-                                <input className='input-search' type="input" placeholder='Search Albom' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
-                                    if (event.key == "Enter") {
-                                        Searching()
-                                    }
-                                }} />
-                                <button className='bt_seacrh' onClick={Searching}><FaSearch /></button>
-                            </div>
-                        </div>
                         <div className="section_top">
                             <div className="soz_for">
                                 <p className='music_avtor'>On this platform you can find the music you are looking for!</p>
@@ -274,16 +265,11 @@ const Home = () => {
                                         </div>
                                     })
                                 ) : (
-                                    <h1>malumot yoq</h1>
+                                    <h1 className='spinner'><Spinner animation="grow" size="sm" /> <Spinner animation="grow" /></h1>
                                 )
-
                             }
-
                         </Slider>
-
-                        <h1>Summer music</h1>
-
-
+                        <h1 className='sumer_music'>Summer music</h1>
                         <Slider {...settings}>
                             {
                                 (miksFilter2.length > 0) ? (
@@ -296,48 +282,47 @@ const Home = () => {
                                         </div>
                                     })
                                 ) : (
-                                    <h1>malumot yoq</h1>
+                                    <h1 className='spinner'><Spinner animation="grow" size="sm" /> <Spinner animation="grow" /></h1>
                                 )
-
                             }
-
                         </Slider>
-
-                        <h1>Popular music</h1>
-
+                        <h1 className='sumer_music'>Popular music</h1>
                         <Slider {...settings}>
                             {
-                                (miksFilter3.length > 0) ? (
-                                    miksFilter3.map((v, i) => {
-                                        return <div className="col-lg-2 col-md-4 col-sm-12" key={i}>
-                                            <div className="categoryCard" onClick={() => TakeCategory(v.name)}>
-                                                <img src={v.images[0].url} alt="Music pictures" className='cImg' />
-                                                <p className='cWord'>{v.name}</p>
-                                            </div>
+
+                                miksFilter3?.map((v, i) => {
+                                    return <div className="col-lg-2 col-md-4 col-sm-12" key={i}>
+                                        <div className="categoryCard" onClick={() => TakeCategory(v.name)}>
+                                            <img src={v.images[0].url} alt="Music pictures" className='cImg' />
+                                            <p className='cWord'>{v.name}</p>
                                         </div>
-                                    })
-                                ) : (
-                                    <h1>malumot yoq</h1>
-                                )
+                                    </div>
+                                })
 
                             }
-
                         </Slider>
                         <div>
                             <div className="slider_map">
+                                <div className="razn">
+                                    <div className="search_box">
+                                        <input className='input-search' type="input" placeholder='Search Albom' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
+                                            if (event.key == "Enter") {
+                                                Searching()
+                                            }
+                                        }} />
+                                        <button className='bt_seacrh' onClick={Searching}><FaSearch /></button>
+                                    </div>
+                                </div>
                                 <div>
                                     <Slider {...settings2}>
                                         {
-                                            (data.length > 0) ? (
-                                                data.map((v, i) => {
-                                                    return <div className="card_section" onClick={() => Going(v.name)} >
-                                                        <img className='section_img' src={v.images[0].url} alt="" />
-                                                        <p className='section_title'>{v.name}</p>
-                                                    </div>
-                                                })
-                                            ) : (
-                                                <h1>error</h1>
-                                            )
+
+                                            data?.map((v, i) => {
+                                                return <div className="card_section" onClick={() => Going(v.name)} >
+                                                    <img className='section_img' src={v.images[0].url} alt="" />
+                                                    <p className='section_title'>{v.name}</p>
+                                                </div>
+                                            })
                                         }
                                     </Slider>
                                 </div>

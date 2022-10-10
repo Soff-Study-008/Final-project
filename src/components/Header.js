@@ -20,11 +20,11 @@ const Header = () => {
           <li className="nav_list">
             <Link to={"/"} className="nav_link"> HOME</Link>
           </li>
-          <li className="nav_list">
+          <li className="nav_list" id='nav_none'>
             <a href="#!" className="nav_link">TV SHOW</a>
           </li>
           <li className="nav_list">
-            <a href="#!" className="nav_link">SEARCH</a>
+            <a href="#!" className="nav_link" id='nav_none'>SEARCH</a>
           </li>
           <li className="nav_list">
             <a href="#!" className="nav_link">NEW</a>
