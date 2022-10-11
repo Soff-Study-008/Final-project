@@ -97,6 +97,8 @@ const Home = () => {
 
 
 
+
+
     useEffect(() => {
 
         let authoToken = {
@@ -111,6 +113,37 @@ const Home = () => {
             .then(data => {
                 setToken(data.access_token)
             })
+
+
+        const TakeCategory2 = async () => {
+            let artistParametres = {
+                method: "GET",
+                headers: {
+                    "Content-type": "application/json",
+                    "Authorization": "Bearer " + token
+                }
+            }
+
+            let aristID = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFEC4WFtoNRpw/playlists", artistParametres)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    setMiksFilter(data.playlists.items)
+                })
+            let aristID1 = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFLVaM30PMBm4/playlists", artistParametres)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    setMiksFilter2(data.playlists.items)
+                })
+            let aristID2 = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFQIL0AXnG5AK/playlists", artistParametres)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    setMiksFilter3(data.playlists.items)
+                })
+        }
+        TakeCategory2()
 
 
     }, [])
@@ -130,14 +163,22 @@ const Home = () => {
                 console.log(data);
                 setData(data.artists.items)
             })
-
+            .catch((err) => {
+                setData([
+                    {
+                        name: "Erkin",
+                        images: [
+                            { url: "" }
+                        ]
+                    }
+                ])
+            })
 
     }
 
     const navigate = useNavigate();
 
     const Going = async (name) => {
-        console.log(name);
         let artistParametres = {
             method: "GET",
             headers: {
@@ -175,37 +216,12 @@ const Home = () => {
             })
     }
 
-    const TakeCategory2 = async () => {
-        let artistParametres = {
-            method: "GET",
-            headers: {
-                "Content-type": "application/json",
-                "Authorization": "Bearer " + token
-            }
-        }
+    // setTimeout(() => {
+    //     TakeCategory2()
+    // }, 1);
 
-        let aristID = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFEC4WFtoNRpw/playlists", artistParametres)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                setMiksFilter(data.playlists.items)
-            })
-        let aristID1 = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFLVaM30PMBm4/playlists", artistParametres)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                setMiksFilter2(data.playlists.items)
-            })
-        let aristID2 = await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFQIL0AXnG5AK/playlists", artistParametres)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                setMiksFilter3(data.playlists.items)
-            })
-    }
 
-    TakeCategory2()
-    // TakeCategory2()
+
 
     // https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFEC4WFtoNRpw/playlists  pop music
     // https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFLVaM30PMBm4/playlists  yoz
@@ -255,9 +271,14 @@ const Home = () => {
                                 ) : (
                                     <h1>malumot yoq</h1>
                                 )
+
                             }
+
                         </Slider>
+
                         <h1>Summer music</h1>
+
+
                         <Slider {...settings}>
                             {
                                 (miksFilter2.length > 0) ? (
@@ -272,9 +293,14 @@ const Home = () => {
                                 ) : (
                                     <h1>malumot yoq</h1>
                                 )
+
                             }
+
                         </Slider>
-                        <h1>Popular music</h1><Slider {...settings}>
+
+                        <h1>Popular music</h1>
+
+                        <Slider {...settings}>
                             {
                                 (miksFilter3.length > 0) ? (
                                     miksFilter3.map((v, i) => {
@@ -288,7 +314,9 @@ const Home = () => {
                                 ) : (
                                     <h1>malumot yoq</h1>
                                 )
+
                             }
+
                         </Slider>
                         <div>
                             <div className="slider_map">
@@ -298,9 +326,7 @@ const Home = () => {
                                             (data.length > 0) ? (
                                                 data.map((v, i) => {
                                                     return <div className="card_section" onClick={() => Going(v.name)} >
-                                                        <div className="card_section-flex">
-                                                            <img className='section_img' src={v.images[0].url} alt="" />
-                                                        </div>
+                                                        <img className='section_img' src={v.images[0].url} alt="" />
                                                         <p className='section_title'>{v.name}</p>
                                                     </div>
                                                 })
