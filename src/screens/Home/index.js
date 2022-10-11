@@ -98,7 +98,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        
+
         let authoToken = {
             method: "POST",
             headers: {
@@ -112,10 +112,10 @@ const Home = () => {
                 setToken(data.access_token)
             })
 
-           
+
     }, [])
 
-    
+
     async function Searching() {
         var artistParametres = {
             method: "GET",
@@ -138,7 +138,6 @@ const Home = () => {
 
     const Going = async (name) => {
         console.log(name);
-
         let artistParametres = {
             method: "GET",
             headers: {
@@ -216,124 +215,105 @@ const Home = () => {
     return (
         <All>
             <section className='fon_home'>
-               
                 <div className="container">
-                    <div className="razn">
-                        <div className="search_box">
-                            <input className='input-search' type="input" placeholder='Search Albom' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
-                                if (event.key == "Enter") {
-                                    Searching()
-                                }
-                            }} />
-                            <button className='bt_seacrh' onClick={Searching}><FaSearch /></button>
+                    <div className="section_header">
+                        <div className="razn">
+                            <div className="search_box">
+                                <input className='input-search' type="input" placeholder='Search Albom' onChange={(v) => setInputWord(v.target.value)} onKeyPress={event => {
+                                    if (event.key == "Enter") {
+                                        Searching()
+                                    }
+                                }} />
+                                <button className='bt_seacrh' onClick={Searching}><FaSearch /></button>
+                            </div>
                         </div>
-                    </div>
-
-                    <div className="section_top">
-                        <div className="soz_for">
-                            {/* <h1 className='gl_title'>MUsic</h1> */}
-                            <img src="https://media.graphassets.com/4L03glPTAe3c3Ongtpzh" alt="" className="top_img" />
-                            <p className='music_avtor'>Ved and Tara fall in love while on a holiday in Corsica and decide to keep their real identities undisclosed. Tara returns to Delhi and meets a new Ved, who is trying to discover his true self. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate velit voluptates tempora reiciendis animi quae repellendus, vero maiores fugit officiis quis nisi assumenda dolor incidunt est optio, porro debitis ducimus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum aliquid, veritatis culpa dolores eos tempora modi accusamus necessitatibus veniam voluptate quas sequi cum aperiam recusandae quaerat nihil ex dolor cumque consequuntur corrupti minus placeat earum? Nam quas earum doloribus tempore!</p>
-                            <p className='text_red'>GENRES</p>
-                            <p className='text_wight'>Senior Veteran</p>
-                            <button className='bt_watch'>
-                                WATCH
-                                <img src="bt_fr.png" alt="" className='bt_img' />
-                            </button>
-                            <button className='bt_mylist'>MY LIST <span>+</span> </button>
+                        <div className="section_top">
+                            <div className="soz_for">
+                                <p className='music_avtor'>Ved and Tara fall in love while on a holiday in Corsica and decide to keep their real identities undisclosed. Tara returns to Delhi and meets a new Ved, who is trying to discover his true self. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate velit voluptates tempora reiciendis animi quae repellendus, vero maiores fugit officiis quis nisi assumenda dolor incidunt est optio, porro debitis ducimus. </p>
+                                <p className='text_red'>GENRES</p>
+                                <p className='text_wight'>Senior Veteran</p>
+                                <button className='bt_watch'>
+                                    WATCH
+                                    <img src="bt_fr.png" alt="" className='bt_img' />
+                                </button>
+                                <button className='bt_mylist'>MY LIST <span>+</span> </button>
+                            </div>
                         </div>
                     </div>
                     <div className="row">
-                    <Slider {...settings}>
-
-                        {
-                            (miksFilter.length > 0) ? (
-                                miksFilter.map((v, i) => {
-                                    return <div className="col-lg-2 col-md-4 col-sm-12" key={i}>
-                                        <div className="categoryCard" onClick={() => TakeCategory(v.name)}>
-                                            <img src={v.images[0].url} alt="Music pictures" className='cImg' />
-                                            <p className='cWord'>{v.name}</p>
+                        <Slider {...settings}>
+                            {
+                                (miksFilter.length > 0) ? (
+                                    miksFilter.map((v, i) => {
+                                        return <div className="col-lg-2 col-md-4 col-sm-12" key={i}>
+                                            <div className="categoryCard" onClick={() => TakeCategory(v.name)}>
+                                                <img src={v.images[0].url} alt="Music pictures" className='cImg' />
+                                                <p className='cWord'>{v.name}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                })
-                            ) : (
-                                <h1>malumot yoq</h1>
-                            )
-
-                        }
-
-                    </Slider>
-
-                    <h1 className='text-light'>Summer music</h1>
-
-
-                    <Slider {...settings}>
-                        {
-                            (miksFilter2.length > 0) ? (
-                                miksFilter2.map((v, i) => {
-                                    return <div className="col-lg-2 col-md-4 col-sm-12" key={i}>
-                                        <div className="categoryCard" onClick={() => TakeCategory(v.name)}>
-                                            <img src={v.images[0].url} alt="Music pictures" className='cImg' />
-                                            <p className='cWord'>{v.name}</p>
+                                    })
+                                ) : (
+                                    <h1>malumot yoq</h1>
+                                )
+                            }
+                        </Slider>
+                        <h1>Summer music</h1>
+                        <Slider {...settings}>
+                            {
+                                (miksFilter2.length > 0) ? (
+                                    miksFilter2.map((v, i) => {
+                                        return <div className="col-lg-2 col-md-4 col-sm-12" key={i}>
+                                            <div className="categoryCard" onClick={() => TakeCategory(v.name)}>
+                                                <img src={v.images[0].url} alt="Music pictures" className='cImg' />
+                                                <p className='cWord'>{v.name}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                })
-                            ) : (
-                                <h1>malumot yoq</h1>
-                            )
-
-                        }
-
-                    </Slider>
-
-                    <h1 className='text-light'>Popular music</h1>
-
-                    <Slider {...settings}>
-                        {
-                            (miksFilter3.length > 0) ? (
-                                miksFilter3.map((v, i) => {
-                                    return <div className="col-lg-2 col-md-4 col-sm-12" key={i}>
-                                        <div className="categoryCard" onClick={() => TakeCategory(v.name)}>
-                                            <img src={v.images[0].url} alt="Music pictures" className='cImg' />
-                                            <p className='cWord'>{v.name}</p>
+                                    })
+                                ) : (
+                                    <h1>malumot yoq</h1>
+                                )
+                            }
+                        </Slider>
+                        <h1>Popular music</h1><Slider {...settings}>
+                            {
+                                (miksFilter3.length > 0) ? (
+                                    miksFilter3.map((v, i) => {
+                                        return <div className="col-lg-2 col-md-4 col-sm-12" key={i}>
+                                            <div className="categoryCard" onClick={() => TakeCategory(v.name)}>
+                                                <img src={v.images[0].url} alt="Music pictures" className='cImg' />
+                                                <p className='cWord'>{v.name}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                })
-                            ) : (
-                                <h1>malumot yoq</h1>
-                            )
-
-                        }
-
-                    </Slider>
-                    <div>
-                        <div className="slider_map">
-                            <div>
-                                <Slider {...settings2}>
-                                    {
-                                        (data.length > 0) ? (
-                                            data.map((v, i) => {
-                                                return <div className="card_section" onClick={() => Going(v.name)} >
-                                                    <img className='section_img' src={v.images[0].url} alt="" />
-                                                    <p className='section_title'>{v.name}</p>
-                                                </div>
-                                                {/* <div className="section_info">
-                                                        <p className="info_text">{v.genres[0]}</p>
-                                                        <p className="section_popularty">popularity : <span> {v.popularity}</span></p>
+                                    })
+                                ) : (
+                                    <h1>malumot yoq</h1>
+                                )
+                            }
+                        </Slider>
+                        <div>
+                            <div className="slider_map">
+                                <div>
+                                    <Slider {...settings2}>
+                                        {
+                                            (data.length > 0) ? (
+                                                data.map((v, i) => {
+                                                    return <div className="card_section" onClick={() => Going(v.name)} >
+                                                        <div className="card_section-flex">
+                                                            <img className='section_img' src={v.images[0].url} alt="" />
+                                                        </div>
+                                                        <p className='section_title'>{v.name}</p>
                                                     </div>
-                                                    <p className="section_play"><AiFillPlayCircle /></p> */}
-                                            })
-                                        ) : (
-                                            <h1>error</h1>
-                                        )
-                                    }
-                                </Slider>
+                                                })
+                                            ) : (
+                                                <h1>error</h1>
+                                            )
+                                        }
+                                    </Slider>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
-
             </section>
         </All>
     )

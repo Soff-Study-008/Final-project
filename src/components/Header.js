@@ -20,22 +20,16 @@ const Header = () => {
           <li className="nav_list">
             <Link to={"/"} className="nav_link"> HOME</Link>
           </li>
-          <li className="nav_list">
+          <li className="nav_list" id='nav_none'>
             <a href="#!" className="nav_link">TV SHOW</a>
           </li>
           <li className="nav_list">
-            <a href="#!" className="nav_link">SEARCH</a>
+            <a href="#!" className="nav_link" id='nav_none'>SEARCH</a>
           </li>
           <li className="nav_list">
             <a href="#!" className="nav_link">NEW</a>
           </li>
         </ul>
-      </div>
-      <div className="navbar_right">
-        <div class="search_box">
-         <input type="text" placeholder='Serach' className='input-search'  />
-         <button className='bt_seacrh'><FaSearch /></button>
-        </div>
       </div>
       <div className="headr-icons">
         <p className="nav_icons"><AiOutlineMessage /></p>
