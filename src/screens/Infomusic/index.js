@@ -13,12 +13,28 @@ export const Infomusic = () => {
   const location = useLocation();
   console.log(location);
   const [comingData, setComingData] = useState(location.state);
-  const [playing, setPlaying] = useState(false);
 
-  // const Playing = (url) => {
-  //   const audio = new Audio(url);
-  //   audio.play();
-  // }
+  const [leftState, setLeftState] = useState(comingData[0])
+
+  const options = {
+    poster: "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=854361313,3188166359&fm=26&gp=0.jpg",
+    sources: [{
+      type: "video/mp4",
+      src: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
+    }],
+    subtitles: [{
+      language: 'zh',
+      url: "https://feawesome.github.io/react-awesome-player/zh.vtt",
+      label: "中文"
+    },
+    {
+      language: 'en',
+      url: "https://feawesome.github.io/react-awesome-player/en.vtt",
+      label: "EN"
+    }],
+    defaultSubtitle: 'en'
+  }
+
 
   return (
     <All>
@@ -39,6 +55,13 @@ export const Infomusic = () => {
                     </div>
                   </div>
                 </div>
+
+                <div className='text-light'>
+                  <audio className='audio_map' src={leftState.preview_url} controls></audio>
+                  <h1>{leftState.name}</h1>
+                  <p>{leftState.duration_ms}</p>
+
+                </div>
               </div>
               <div className="bottom_player">
 
@@ -51,10 +74,10 @@ export const Infomusic = () => {
                     return <div className="col-6 m-2">
 
                       <div className='d-flex orap_map'>
-                        <img src="https://music.apple.com/assets/meta/apple-music-4d84eb1deedb9217bf940603688603b0.png" alt="" className='img_nav' />
+                        <img src="https://music.apple.com/assets/meta/apple-music-4d84eb1deedb9217bf940603688603b0.png" alt="" className='img_nav' onClick={() => setLeftState(v)} />
                         <div>
-                          <p className='map_name'>{v.name}</p>
-                          <audio className='audio_map' src={v.preview_url}  controls></audio>
+                          <p className='map_name' >{v.name}</p>
+                          {/* <audio className='audio_map' src={v.preview_url} controls></audio> */}
                         </div>
                       </div>
                     </div>
