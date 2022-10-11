@@ -18,7 +18,7 @@ const Header = () => {
         <h2 className="nav_title pt-1">MUsic</h2>
         <ul className="nav_item">
           <li className="nav_list">
-            <Link to={"/"} className="nav_link"> HOME</Link>
+            <Link to={"/"} className="nav_link" id='nav_none'> HOME</Link>
           </li>
           <li className="nav_list" id='nav_none'>
             <a href="#!" className="nav_link">TV SHOW</a>
@@ -27,7 +27,7 @@ const Header = () => {
             <a href="#!" className="nav_link" id='nav_none'>SEARCH</a>
           </li>
           <li className="nav_list">
-            <a href="#!" className="nav_link">NEW</a>
+            <a href="#!" className="nav_link" id='nav_none'>NEW</a>
           </li>
         </ul>
       </div>
