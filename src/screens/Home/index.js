@@ -161,21 +161,21 @@ const Home = () => {
                 console.log(data);
                 setData(data.artists.items);
 
-               if (data.artists.items.length>0){
-                swal({
-                    title: "Good job!",
-                    text: "You clicked the button!",
-                    icon: "success",
-                    timer: 2000
-                  });
-               }else{
-                swal({
-                    title: "Error",
-                    text: "You clicked the button!",
-                    icon: "error",                    
-                    timer: 2000
-                  });
-               }
+                if (data.artists.items.length > 0) {
+                    swal({
+                        title: "Good job!",
+                        text: "You clicked the button!",
+                        icon: "success",
+                        timer: 2000
+                    });
+                } else {
+                    swal({
+                        title: "Error",
+                        text: "You clicked the button!",
+                        icon: "error",
+                        timer: 2000
+                    });
+                }
             })
             .catch((r) => {
                 swal({
@@ -183,8 +183,8 @@ const Home = () => {
                     text: "You clicked the button!",
                     icon: "error",
                     timer: 2000
-                  });
-               
+                });
+
             })
 
     }
@@ -263,10 +263,10 @@ const Home = () => {
                     <div className="section_header">
                         <div className="section_top  pt-3">
                             <div className="soz_for">
-                            <div>
-                                <p>Your like Music</p>
-                                <p>Slining and Enjoy</p>
-                            </div>
+                                <div>
+                                    <p>Your like Music</p>
+                                    <p>Slining and Enjoy</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -334,10 +334,11 @@ const Home = () => {
                                 <div>
                                     <Slider {...settings2}>
                                         {
-
                                             data?.map((v, i) => {
-                                                return <div className="card_section" onClick={() => Going(v.name)} >
-                                                    <img className='section_img' src={v.images[0].url} alt="" />
+                                                return <div className='search_section'>
+                                                    <div className="card_section" onClick={() => Going(v.name)} >
+                                                        <img className='section_img' src={v.images[0].url} alt="" />
+                                                    </div>
                                                     <p className='section_title'>{v.name}</p>
                                                 </div>
                                             })
