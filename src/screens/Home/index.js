@@ -98,34 +98,7 @@ const Home = () => {
 
 
 
-    const TakeCategory2 = async () => {
-        let artistParametres = {
-            method: "GET",
-            headers: {
-                "Content-type": "application/json",
-                "Authorization": "Bearer " + token
-            }
-        }
 
-        await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFEC4WFtoNRpw/playlists", artistParametres)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                setMiksFilter(data.playlists.items)
-            })
-        await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFLVaM30PMBm4/playlists", artistParametres)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                setMiksFilter2(data.playlists.items)
-            })
-        await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFQIL0AXnG5AK/playlists", artistParametres)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                setMiksFilter3(data.playlists.items)
-            })
-    }
 
     useEffect(() => {
 
@@ -142,9 +115,40 @@ const Home = () => {
                 setToken(data.access_token)
             })
 
-        // TakeCategory2()
 
     }, [])
+
+
+    const TakeCategory2 = async () => {
+        let artistParametres = {
+            method: "GET",
+            headers: {
+                "Content-type": "application/json",
+                "Authorization": "Bearer " + token
+            }
+        }
+
+        await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFEC4WFtoNRpw/playlists", artistParametres)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setMiksFilter(data.playlists.items)
+            })
+            .catch(e=>console.log(e))
+
+        await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFLVaM30PMBm4/playlists", artistParametres)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setMiksFilter2(data.playlists.items)
+            })
+        await fetch("https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFQIL0AXnG5AK/playlists", artistParametres)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setMiksFilter3(data.playlists.items)
+            })
+    }
 
 
     async function Searching() {
@@ -229,24 +233,10 @@ const Home = () => {
             })
     }
 
-    // let i = 1;
-    // do {
-    //     // TakeCategory2();
-    //     console.log(1);
-    // } while (i > 4);
 
-    // let a = 0;
-    // while (a == 0) {
-    //     if (miksFilter.length > 0) {
-    //         a = 1
-    //         return TakeCategory2();
-    //     }
+    // if (miksFilter.length <= 0) {
+    //     TakeCategory2();
     // }
-
-
-    if (miksFilter.length <= 0) {
-        TakeCategory2();
-    }
 
 
 
@@ -259,6 +249,7 @@ const Home = () => {
     return (
         <All>
             <section className='fon_home'>
+                <button onClick={()=>TakeCategory2()}>TakeCategory2</button>
                 <div className="container">
                     <div className="section_header">
                         <div className="section_top  pt-3">
@@ -288,7 +279,7 @@ const Home = () => {
                             }
                         </Slider>
                         <h1 className='sumer_music'>Summer music</h1>
-                        <Slider {...settings}>
+                        {/* <Slider {...settings}>
                             {
                                 (miksFilter2.length > 0) ? (
                                     miksFilter2.map((v, i) => {
@@ -318,7 +309,7 @@ const Home = () => {
                                 })
 
                             }
-                        </Slider>
+                        </Slider> */}
                         <div>
                             <div className="slider_map">
                                 <div className="razn">
