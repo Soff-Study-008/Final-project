@@ -77,7 +77,6 @@
     font-weight: bold;
     margin-bottom: 0;
     margin-top: 0;
-    max-width: 230px;
 }
 
 
@@ -121,4 +120,14 @@ audio::-webkit-media-controls-timeline {
 
 audio::-webkit-media-controls-timeline-container {
     box-shadow: none;
+}
+
+
+
+
+@media  screen  and (max-width:600px){
+
+  .map_name{
+    width: 100%;
+  }
 }

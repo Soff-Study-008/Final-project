@@ -160,15 +160,31 @@ const Home = () => {
             .then(data => {
                 console.log(data);
                 setData(data.artists.items);
+
+               if (data.artists.items.length>0){
                 swal({
-                    title: "Find music !",
+                    title: "Good job!",
                     text: "You clicked the button!",
                     icon: "success",
-                    timer:3000
-                });
+                    timer: 2000
+                  });
+               }else{
+                swal({
+                    title: "Error",
+                    text: "You clicked the button!",
+                    icon: "error",                    
+                    timer: 2000
+                  });
+               }
             })
             .catch((r) => {
-                alert("uhladi")
+                swal({
+                    title: r,
+                    text: "You clicked the button!",
+                    icon: "error",
+                    timer: 2000
+                  });
+               
             })
 
     }
