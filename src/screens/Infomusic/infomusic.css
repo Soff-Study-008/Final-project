@@ -52,23 +52,23 @@
 
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+/* Track */
+::-webkit-scrollbar-track {
     border-radius: 5px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgba(39, 38, 38, 0.457); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(39, 38, 38, 0.457);
     border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(76, 70, 70, 0.457); 
-  }
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(76, 70, 70, 0.457);
+}
 
 .map_name {
     color: white;
@@ -90,11 +90,35 @@
 }
 
 
-.audio_map {
-    height: 30px;
-    margin-top: 5px;
-    
+
+audio {
+    width: 100%;
+    margin-top: 30px;
+    outline: none;
+    box-shadow: none;
+}
+
+audio::-webkit-media-controls-panel {
+    background: rgb(235, 236, 239);
+    box-shadow: none;
+    border-radius: 15px;
+}
+
+audio::-webkit-media-controls-timeline {
+    background: rgb(219, 201, 214);
+
+    border-radius: 20px;
+    margin: 10px;
 }
 
 
+.name_dev {
+    text-shadow: 0px 0px 10px rgb(255, 255, 255);
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+}
 
+
+audio::-webkit-media-controls-timeline-container {
+    box-shadow: none;
+}

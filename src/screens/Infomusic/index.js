@@ -58,7 +58,7 @@ export const Infomusic = () => {
 
                 <div className='text-light'>
                   <audio className='audio_map' src={leftState.preview_url} controls></audio>
-                  <h1>{leftState.name}</h1>
+                  <h1 className='name_dev'>{leftState.name}</h1>
                   <p>{leftState.duration_ms}</p>
 
                 </div>
