@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./All.css";
 import { FaSearch } from 'react-icons/fa';
 import { BsCameraVideo, } from 'react-icons/bs';
@@ -6,25 +6,51 @@ import { FiBell, } from 'react-icons/fi';
 import { AiOutlineMessage } from 'react-icons/ai';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
-
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 // import { AiFillSetting } from "react-icons/ai";
 // import { AiOutlineBell } from "react-icons/ai";
 
 
 const Header = () => {
+  const [show, setShow] = useState(false);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
+
+
+
     <div className="navbar_fon">
       <div className="navbar_header">
         <div className="navbar_left">
           <h2 className="nav_title pt-1">MUsic</h2>
-          {/* <div className="hamburger_menu"><GiHamburgerMenu /></div>
+          <div className="hamburger_menu"></div>
           <div className='mini_menu'>
-            <p className='hover_p' >menu</p> 
-            <p className='hover_p' >menu</p>
-            <p className='hover_p' >menu</p>
-            <p className='hover_p' >menu</p>
-          </div> */}
+            
+          <button className='bt_phon'  onClick={handleShow}>
+          <GiHamburgerMenu />
+          </button>
+
+      <Offcanvas className="offcanvas_body" show={show} onHide={handleClose}>
+        <Offcanvas.Header closeButton>
+          <p className=' menu_phon'  >Menu</p>
+        </Offcanvas.Header>
+        <div >
+          <ul className='ul_phone'>
+            <li>Pop Music</li>
+            <li>Trend Music</li>
+            <li>Contact</li>
+            <li>About</li>
+          </ul>
+        </div>
+      </Offcanvas>
+
+
+
+
+           
+          </div>
           <ul className="nav_item">
             <li className="nav_list">
               <Link to={"/"} className="nav_link" id='nav_none'> HOME</Link>

@@ -258,19 +258,53 @@
 }
 
 .mini_menu{
-    color: #157347;
+    display: none;
 }
 
 .hamburger_menu:hover{
     color: rgb(60, 28, 100);
 }
 
+.ul_phone{
+    color: white;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu_phon{
+    color: white;
+    font-size: 40px !important;
+}
+
+
+.ul_phone li{
+    margin-left: 15px;
+    margin-top: 10px;
+    font-size: 35px;
+    border-bottom: white solid ;
+    width: 250px;
+}
+
+
+.bt_phon{
+    color: white;
+    background-color:  rgba(20, 20, 20, 0.913);
+    border: none;
+    font-size: 30px;
+    margin-left: 100px;
+}
 
 @media screen and (max-width:600px) {
     #nav_none {
         display: none;
     }
 
+    .mini_menu{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
 
     .hamburger_menu {
         display: block;
@@ -302,4 +336,9 @@
     .headr-icons {
         display: none;
     }
+}
+
+
+.offcanvas_body{
+    background-color: rgb(30, 30, 30)  !important;
 }

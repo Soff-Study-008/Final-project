@@ -71,7 +71,7 @@ export const Infomusic = () => {
               <div className="row ovr">
                 {
                   comingData.map((v, i) => {
-                    return <div className="col-6 m-2">
+                    return <div className="col-12 m-2">
 
                       <div className='d-flex orap_map'>
                         <img src="https://music.apple.com/assets/meta/apple-music-4d84eb1deedb9217bf940603688603b0.png" alt="" className='img_nav' onClick={() => setLeftState(v)} />

@@ -261,17 +261,12 @@ const Home = () => {
             <section className='fon_home'>
                 <div className="container">
                     <div className="section_header">
-                        <div className="section_top">
+                        <div className="section_top  pt-3">
                             <div className="soz_for">
-                                <p className='music_avtor'>On this platform you can find the music you are looking for!</p>
-                                <p className='music_avtor'> Have fun! </p>
-                                <p className='text_red'>GENRES</p>
-                                <p className='text_wight'>Senior Veteran</p>
-                                <button className='bt_watch'>
-                                    WATCH
-                                    <img src="bt_fr.png" alt="" className='bt_img' />
-                                </button>
-                                <button className='bt_mylist'>MY LIST <span>+</span> </button>
+                            <div>
+                                <p>Your like Music</p>
+                                <p>Slining and Enjoy</p>
+                            </div>
                             </div>
                         </div>
                     </div>
