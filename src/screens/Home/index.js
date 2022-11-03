@@ -280,7 +280,7 @@ const Home = () => {
                             }
                         </Slider>
                         <h1 className='sumer_music'>Summer music</h1>
-                        {/* <Slider {...settings}>
+                        <Slider {...settings}>
                             {
                                 (miksFilter2.length > 0) ? (
                                     miksFilter2.map((v, i) => {
@@ -310,7 +310,7 @@ const Home = () => {
                                 })
 
                             }
-                        </Slider> */}
+                        </Slider>
                         <div>
                             <div className="slider_map">
                                 <div className="razn">
