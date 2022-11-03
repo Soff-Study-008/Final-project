@@ -233,6 +233,7 @@ const Home = () => {
             })
     }
 
+    TakeCategory2()
 
     // if (miksFilter.length <= 0) {
     //     TakeCategory2();
@@ -249,7 +250,7 @@ const Home = () => {
     return (
         <All>
             <section className='fon_home'>
-                <button onClick={()=>TakeCategory2()}>TakeCategory2</button>
+                
                 <div className="container">
                     <div className="section_header">
                         <div className="section_top  pt-3">

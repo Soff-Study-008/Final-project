@@ -282,7 +282,6 @@
     margin-left: 15px;
     margin-top: 10px;
     font-size: 35px;
-    border-bottom: white solid ;
     width: 250px;
 }
 
@@ -341,4 +340,15 @@
 
 .offcanvas_body{
     background-color: rgb(30, 30, 30)  !important;
+}
+
+
+.Logo_Bms{
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    margin-top: 500px;
+    color: white;
+    list-style-type: none;
+    font-size: 50px;
 }

@@ -43,6 +43,9 @@ const Header = () => {
             <li>Contact</li>
             <li>About</li>
           </ul>
+          <ul className='Logo_Bms'>
+            <li>SMB</li>
+          </ul>
         </div>
       </Offcanvas>
 
